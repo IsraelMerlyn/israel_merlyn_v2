@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: true, },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/icon', '@nuxt/image', '@nuxtjs/google-fonts'],
+  modules: ['@nuxtjs/tailwindcss', '@vite-pwa/nuxt', '@nuxt/content', '@nuxt/icon', '@nuxt/image', '@nuxtjs/google-fonts'],
   app: {
     head: {
       title: 'Tu Nombre | Frontend Developer & Docente',
@@ -28,6 +28,35 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'netlify',
   },
+  pwa: {
+    manifest: {
+      name: 'Israel Portfolio',
+      short_name: 'Israel Dev',
+      description: 'Portafolio Profesional de Josue Israel',
+      theme_color: '#0f172a', // Tu color Navy 900
+      background_color: '#ffffff',
+      icons: [
+        {
+          src: 'pwa-192x192.png', // Tienes que poner estos iconos en /public
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
+    },
+    workbox: {
+      navigateFallback: '/',
+    },
+    devOptions: {
+      enabled: true,
+      type: 'module'
+    }
+  },
+
   googleFonts: {
     families: {
       'Inter': [400, 500, 700],
