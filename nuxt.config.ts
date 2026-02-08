@@ -29,7 +29,10 @@ export default defineNuxtConfig({
     preset: 'netlify',
   },
   pwa: {
+    strategies: 'generateSW',
     registerType: 'autoUpdate',
+    manifestFilename: 'manifest.webmanifest',
+    injectRegister: 'auto',
     manifest: {
       name: 'Israel Portfolio',
       short_name: 'Israel Dev',
@@ -37,18 +40,22 @@ export default defineNuxtConfig({
       theme_color: '#0f172a', // Tu color Navy 900
       background_color: '#ffffff',
       display: 'standalone',
+      orientation: 'portrait',
       scope: '/',
       start_url: '/',
+      id: '/',
       icons: [
         {
-          src: '/pwa-192-192.png', // Tienes que poner estos iconos en /public
+          src: '/pwa192x192.png', // Tienes que poner estos iconos en /public
           sizes: '192x192',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'any maskable',
         },
         {
-          src: '/pwa-512-512.png',
+          src: '/pwa512x512.png',
           sizes: '512x512',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'any maskable'
         }
       ]
     },
@@ -58,7 +65,9 @@ export default defineNuxtConfig({
     },
     devOptions: {
       enabled: true,
-      type: 'module'
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     }
   },
 
