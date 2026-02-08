@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/icon'],
+
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/icon', '@nuxt/image'],
   app: {
     head: {
       title: 'Tu Nombre | Frontend Developer & Docente',
@@ -16,7 +17,9 @@ export default defineNuxtConfig({
       ]
     },
     // Transiciones nativas suaves entre páginas
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+
   },
+
 
 })

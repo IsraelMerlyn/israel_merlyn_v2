@@ -40,7 +40,7 @@ const scrollToSection = (id) => {
       </nav>
 
       <div class="hidden md:flex items-center gap-4">
-        <button @click="toggleTheme" 
+        <button @click="toggleTheme" aria-label="Cambiar a modo oscuro"
                 class="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-navy-800 transition-colors">
           <span v-if="isDark">☀️</span>
           <span v-else>🌙</span>
@@ -55,7 +55,7 @@ const scrollToSection = (id) => {
            <span v-if="isDark">☀️</span><span v-else>🌙</span>
         </button>
         
-        <button @click="isMenuOpen = !isMenuOpen" class="text-navy-900 dark:text-white focus:outline-none">
+        <button aria-label="Abrir menú de navegación" @click="isMenuOpen = !isMenuOpen" class="text-navy-900 dark:text-white focus:outline-none">
           <div class="w-6 h-5 relative flex flex-col justify-between">
             <span class="w-full h-0.5 bg-current transform transition-all duration-300" :class="isMenuOpen ? 'rotate-45 translate-y-2.5' : ''"></span>
             <span class="w-full h-0.5 bg-current transition-opacity duration-300" :class="isMenuOpen ? 'opacity-0' : 'opacity-100'"></span>

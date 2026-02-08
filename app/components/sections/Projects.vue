@@ -55,8 +55,17 @@ const categories: { key: ProjectCategory | 'all'; label: string }[] = [
                  class="group bg-slate-50 dark:bg-navy-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-navy-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
           
           <div class="relative h-48 overflow-hidden">
-            <img :src="project.image" :alt="project.title" 
+            <!-- <img :src="project.image" :alt="project.title" 
                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  -->
+                 <NuxtImg 
+  :src="project.image" 
+  :alt="project.title"
+  format="webp"
+  quality="80"
+  loading="lazy"
+  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+/>
             <div class="absolute top-3 left-3 bg-white/90 backdrop-blur text-navy-900 text-xs font-bold px-2 py-1 rounded">
               {{ project.category.toUpperCase() }}
             </div>

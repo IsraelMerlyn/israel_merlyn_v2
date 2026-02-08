@@ -1,4 +1,5 @@
 <script setup>
+import UiMagicCursor from './components/ui/MagicCursor.vue'
 import { useScrollReveal } from './composable/useScrollReveal';
 import Experience from './components/sections/Experience.vue';
 useScrollReveal()
@@ -19,4 +20,5 @@ useScrollReveal()
       </main>
 <LayoutTheFooter />
     </div>
+    <UiMagicCursor />
 </template>
