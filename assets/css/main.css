@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply transition-colors duration-500 ease-in-out antialiased;
+    overflow-x: hidden;
+    /* Evita scroll horizontal indeseado */
+}
+
+html {
+    scroll-padding-top: 100px;
+    /* Altura de tu header + un poco de aire */
+    scroll-behavior: smooth;
+    /* Respaldo por si Lenis falla */
+}
+
+/* Ocultar barra de scroll fea (Chrome/Safari) para look más limpio */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-navy-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-blue-500;
+}
+
+/* ANIMACIONES SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Empieza abajo */
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variación para que entren desde los lados (opcional) */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
