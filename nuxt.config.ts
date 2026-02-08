@@ -13,7 +13,8 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Portafolio profesional de desarrollo web y docencia tecnológica.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'manifest', href: '/manifest.webmanifest' },
+        { rel: 'icon', type: 'image/png', href: '/pwa192x192.png' }
       ]
     },
     // Transiciones nativas suaves entre páginas
