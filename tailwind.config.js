@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: 'class',
+  darkMode: 'class',
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -14,38 +14,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Tu paleta personalizada
+
         navy: {
-          900: "#0f172a", // Antes era #09124D. Ahora es un "Slate 900" (Elegante, profesional)
-        800: "#1e293b", // Antes era #0C1751. Ahora es "Slate 800" (Para tarjetas)
-        700: "#334155",
+          900: "#0f172a",
+          800: "#1e293b",
+          700: "#334155",
         },
         blue: {
-          600: "#1B3573", // Subtítulos / Acentos
+          600: "#1B3573",
           500: "#445B84",
         },
         slate: {
-          700: "#2F3156", // Párrafos oscuros
-          600: "#565A73", // Párrafos medios
+          700: "#2F3156",
+          600: "#565A73",
         },
         steel: {
-          300: "#B4B7BC", // Detalles
+          300: "#B4B7BC",
         },
         mist: {
-          200: "#DDE0E5", // Textos secundarios en dark mode
+          200: "#DDE0E5",
         },
         white: "#FEFEFE",
-      
+
       },
       fontFamily: {
-        // Sugerencia: Define una fuente técnica y una de lectura
+
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
-      image: {
-    // 👇 ESTO ES OBLIGATORIO PARA VERCEL
-    domains: ['images.unsplash.com'], 
-  }
+
     },
   },
   plugins: [],

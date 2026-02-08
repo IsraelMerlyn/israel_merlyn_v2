@@ -21,12 +21,19 @@ export default defineNuxtConfig({
 
 
   },
+  image: {
+
+    domains: ['images.unsplash.com'],
+  },
+  nitro: {
+    preset: 'netlify',
+  },
   googleFonts: {
     families: {
-      'Inter': [400, 500, 700], // Fuente principal
-      'JetBrains+Mono': [400],  // Fuente de código
+      'Inter': [400, 500, 700],
+      'JetBrains+Mono': [400],
     },
-    display: 'swap', // Muestra texto genérico mientras carga la fuente bonita (evita pantalla en blanco)
+    display: 'swap',
     prefetch: true,
     preconnect: true,
   }
