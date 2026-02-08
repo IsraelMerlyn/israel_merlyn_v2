@@ -1,4 +1,6 @@
 <script setup>
+import Experience from './components/sections/Experience.vue';
+
 // No necesitamos importar nada, Nuxt lo hace solo (auto-imports)
 </script>
 
@@ -9,8 +11,10 @@
     
     <main>
       <SectionsTheHero />
+      <Experience/>
+      <SectionsProjects />
       
       </main>
-
+<LayoutTheFooter />
     </div>
 </template>

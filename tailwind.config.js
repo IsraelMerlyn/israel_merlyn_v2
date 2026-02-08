@@ -16,8 +16,9 @@ module.exports = {
       colors: {
         // Tu paleta personalizada
         navy: {
-          900: "#09124D", // Tu color principal oscuro
-          800: "#0C1751",
+          900: "#0f172a", // Antes era #09124D. Ahora es un "Slate 900" (Elegante, profesional)
+        800: "#1e293b", // Antes era #0C1751. Ahora es "Slate 800" (Para tarjetas)
+        700: "#334155",
         },
         blue: {
           600: "#1B3573", // Subtítulos / Acentos

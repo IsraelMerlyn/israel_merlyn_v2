@@ -14,12 +14,12 @@
         </div>
         
         <h1 class="text-5xl md:text-7xl font-bold leading-tight text-navy-900 dark:text-white">
-          Arquitectura <br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Limpia & Escalable</span>
+          Hola <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Soy Josue Vasquez</span>
         </h1>
         
         <p class="text-xl text-slate-600 dark:text-steel-300 max-w-lg mx-auto md:mx-0 leading-relaxed">
-          Soy Israel. Combino la lógica del <strong>Desarrollo Frontend</strong> con la pedagogía de la <strong>Docencia</strong> para crear productos digitales de alto impacto.
+          Combino la lógica del <strong>Desarrollo Frontend</strong> con la pedagogía de la <strong>Docencia</strong> para crear productos digitales de alto impacto.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
@@ -33,10 +33,10 @@
         <div class="relative bg-white dark:bg-navy-800 p-6 rounded-2xl border border-mist-200 dark:border-navy-700 shadow-2xl transform transition-transform group-hover:rotate-y-2 duration-500">
           <pre class="font-mono text-sm text-slate-600 dark:text-mist-200 overflow-x-auto">
 <span class="text-blue-600">const</span> developer = {
-  name: <span class="text-green-500">"Israel"</span>,
+  name: <span class="text-green-500">"IsraelMerlyn"</span>,
   roles: [<span class="text-green-500">"Frontend"</span>, <span class="text-green-500">"Docente"</span>],
   skills: {
-    frontend: [<span class="text-green-500">"Vue"</span>, <span class="text-green-500">"Nuxt"</span>],
+    frontend: [<span class="text-green-500">"Vue"</span>, <span class="text-green-500">"Nuxt"</span>], <span class="text-green-500">"React"</span>],
     backend: [<span class="text-green-500">"Supabase"</span>, <span class="text-green-500">"SpringBoot"</span>]
   },
   passion: <span class="text-blue-600">true</span>
