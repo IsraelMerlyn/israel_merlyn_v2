@@ -1,6 +1,7 @@
 <script setup>
+import { useScrollReveal } from './composable/useScrollReveal';
 import Experience from './components/sections/Experience.vue';
-
+useScrollReveal()
 // No necesitamos importar nada, Nuxt lo hace solo (auto-imports)
 </script>
 
@@ -10,8 +11,8 @@ import Experience from './components/sections/Experience.vue';
     <LayoutTheHeader />
     
     <main>
-      <SectionsTheHero />
-      <Experience/>
+      <SectionsTheHero /> <div class="reveal"> <Experience/> </div>
+     
       <SectionsSkills />
       <SectionsProjects />
       
