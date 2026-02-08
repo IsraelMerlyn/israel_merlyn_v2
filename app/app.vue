@@ -1,15 +1,15 @@
 <script setup>
 import UiMagicCursor from './components/ui/MagicCursor.vue'
 import { useScrollReveal } from './composable/useScrollReveal';
-import Experience from './components/sections/Experience.vue';
+
 useScrollReveal()
 
 useSeoMeta({
   title: 'Israel | Frontend Developer & Docente',
   ogTitle: 'Israel | Frontend Developer & Docente',
-  description: 'Portafolio profesional. Especialista en Vue.js, Nuxt y Arquitectura de Software.',
-  ogDescription: 'Portafolio profesional. Especialista en Vue.js, Nuxt y Arquitectura de Software.',
-  ogImage: 'https://tu-dominio.com/tu-foto-cover.jpg', // ¡Sube una imagen a la carpeta public!
+  description: 'Portafolio profesional. Vue.js, Nuxt.',
+  ogDescription: 'Portafolio profesional. Desarrollador Frontend y Docente en Vue.js, Nuxt .',
+  ogImage: 'https://portafolio-israelmerlyn.netlify.app/home.png', // ¡Sube una imagen a la carpeta public!
   twitterCard: 'summary_large_image',
 })
 </script>
@@ -40,4 +40,5 @@ useSeoMeta({
   </div>
   
   <UiMagicCursor />
+  <!-- <InstallPwa /> -->
 </template>

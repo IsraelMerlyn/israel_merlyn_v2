@@ -14,7 +14,8 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'manifest', href: '/manifest.webmanifest' },
-        { rel: 'icon', type: 'image/png', href: '/pwa192x192.png' }
+        { rel: 'icon', type: 'image/png', href: '/pwa192x192.png' },
+        { rel: 'apple-touch-icon', href: '/pwa192x192.png' }
       ]
     },
     // Transiciones nativas suaves entre páginas
