@@ -39,12 +39,12 @@ export default defineNuxtConfig({
       display: 'standalone',
       icons: [
         {
-          src: '../public/pwa-192-192.png', // Tienes que poner estos iconos en /public
+          src: '/pwa-192-192.png', // Tienes que poner estos iconos en /public
           sizes: '192x192',
           type: 'image/png'
         },
         {
-          src: '../public/pwa-512-512.png',
+          src: '/pwa-512-512.png',
           sizes: '512x512',
           type: 'image/png'
         }
