@@ -12,6 +12,7 @@ import Experience from './components/sections/Experience.vue';
     <main>
       <SectionsTheHero />
       <Experience/>
+      <SectionsSkills />
       <SectionsProjects />
       
       </main>
