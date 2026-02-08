@@ -37,6 +37,8 @@ export default defineNuxtConfig({
       theme_color: '#0f172a', // Tu color Navy 900
       background_color: '#ffffff',
       display: 'standalone',
+      scope: '/',
+      start_url: '/',
       icons: [
         {
           src: '/pwa-192-192.png', // Tienes que poner estos iconos en /public
