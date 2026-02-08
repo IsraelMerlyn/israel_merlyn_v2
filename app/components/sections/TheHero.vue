@@ -1,5 +1,5 @@
 <template>
-  <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+  <section class="min-h-screen flex items-center justify-center pt-32 pb-12 md:pt-20 relative overflow-hidden">
     
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-20 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -13,35 +13,37 @@
            Disponible para proyectos
         </div>
         
-        <h1 class="text-5xl md:text-7xl font-bold leading-tight text-navy-900 dark:text-white">
+        <h1 class="text-4xl md:text-7xl font-bold leading-tight text-navy-900 dark:text-white">
           Hola <br />
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Soy Josue Vasquez</span>
         </h1>
         
-        <p class="text-xl text-slate-600 dark:text-steel-300 max-w-lg mx-auto md:mx-0 leading-relaxed">
+        <p class="text-lg md:text-xl text-slate-600 dark:text-steel-300 max-w-lg mx-auto md:mx-0 leading-relaxed">
           Combino la lógica del <strong>Desarrollo Frontend</strong> con la pedagogía de la <strong>Docencia</strong> para crear productos digitales de alto impacto.
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-          <UiBaseButton variant="primary" to="#proyectos">Ver Portafolio</UiBaseButton>
-          <UiBaseButton variant="outline" to="#contacto">Descargar CV</UiBaseButton>
+          <UiBaseButton variant="primary" to="#proyectos" class="w-full sm:w-auto">Ver Portafolio</UiBaseButton>
+          <UiBaseButton variant="outline" to="#contacto" class="w-full sm:w-auto">Descargar CV</UiBaseButton>
         </div>
       </div>
 
-      <div class="relative group perspective-1000">
+      <div class="relative group perspective-1000 mt-8 md:mt-0">
         <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-        <div class="relative bg-white dark:bg-navy-800 p-6 rounded-2xl border border-mist-200 dark:border-navy-700 shadow-2xl transform transition-transform group-hover:rotate-y-2 duration-500">
-          <pre class="font-mono text-sm text-slate-600 dark:text-mist-200 overflow-x-auto">
+        <div class="relative bg-white dark:bg-navy-800 p-6 rounded-2xl border border-mist-200 dark:border-navy-700 shadow-2xl transform transition-transform group-hover:rotate-y-2 duration-500 overflow-hidden">
+          <div class="overflow-x-auto">
+            <pre class="font-mono text-xs md:text-sm text-slate-600 dark:text-mist-200">
 <span class="text-blue-600">const</span> developer = {
-  name: <span class="text-green-500">"IsraelMerlyn"</span>,
+  name: <span class="text-green-500">"JosueVasquez"</span>,
   roles: [<span class="text-green-500">"Frontend"</span>, <span class="text-green-500">"Docente"</span>],
   skills: {
-    frontend: [<span class="text-green-500">"Vue"</span>, <span class="text-green-500">"Nuxt"</span>], <span class="text-green-500">"React"</span>],
+    frontend: [<span class="text-green-500">"Vue"</span>, <span class="text-green-500">"Nuxt"</span>, <span class="text-green-500">"React"</span>], 
     backend: [<span class="text-green-500">"Supabase"</span>, <span class="text-green-500">"SpringBoot"</span>]
   },
   passion: <span class="text-blue-600">true</span>
 };
-          </pre>
+            </pre>
+          </div>
         </div>
       </div>
 

@@ -42,6 +42,10 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
+      image: {
+    // 👇 ESTO ES OBLIGATORIO PARA VERCEL
+    domains: ['images.unsplash.com'], 
+  }
     },
   },
   plugins: [],
