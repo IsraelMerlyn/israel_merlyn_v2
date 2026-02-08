@@ -1,0 +1,5 @@
+# Redirigir optimización de imágenes a la función del servidor
+/_ipx/* /.netlify/functions/server  200
+
+# Fallback para rutas de página (SPA/SSR)
+/* /.netlify/functions/server  200
