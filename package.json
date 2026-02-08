@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "better-sqlite3": "^12.6.2",
     "gsap": "^3.14.2",
     "lenis": "^1.3.17",
     "nuxt": "^4.3.0",

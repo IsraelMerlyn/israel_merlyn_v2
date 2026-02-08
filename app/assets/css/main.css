@@ -1,0 +1,5 @@
+body {
+    @apply bg-navy-900 text-white antialiased;
+    overflow-x: hidden;
+    /* Evita scroll horizontal indeseado */
+}
