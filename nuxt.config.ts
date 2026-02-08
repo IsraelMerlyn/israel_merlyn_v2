@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/icon', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxt/icon', '@nuxt/image', '@nuxtjs/google-fonts'],
   app: {
     head: {
       title: 'Tu Nombre | Frontend Developer & Docente',
@@ -19,7 +19,17 @@ export default defineNuxtConfig({
     // Transiciones nativas suaves entre páginas
     pageTransition: { name: 'page', mode: 'out-in' },
 
+
   },
+  googleFonts: {
+    families: {
+      'Inter': [400, 500, 700], // Fuente principal
+      'JetBrains+Mono': [400],  // Fuente de código
+    },
+    display: 'swap', // Muestra texto genérico mientras carga la fuente bonita (evita pantalla en blanco)
+    prefetch: true,
+    preconnect: true,
+  }
 
 
 })

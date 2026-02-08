@@ -34,9 +34,14 @@
       <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
         <p>&copy; 2026 Israel. Todos los derechos reservados.</p>
         <div class="flex gap-6">
-          <a href="#" class="hover:text-white transition-colors">GitHub</a>
-          <a href="#" class="hover:text-white transition-colors">Twitter</a>
-          <a href="#" class="hover:text-white transition-colors">YouTube</a>
+         <a href="#" aria-label="Visitar perfil de GitHub" class="hover:text-white transition-colors">
+    <Icon name="uil:github" size="24" /> </a>
+  <a href="#" aria-label="Visitar perfil de Twitter" class="hover:text-white transition-colors">
+     <Icon name="uil:twitter" size="24" />
+  </a>
+  <a href="#" aria-label="Visitar canal de YouTube" class="hover:text-white transition-colors">
+     <Icon name="uil:youtube" size="24" />
+  </a>
         </div>
       </div>
     </div>
