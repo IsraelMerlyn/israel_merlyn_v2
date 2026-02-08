@@ -29,20 +29,22 @@ export default defineNuxtConfig({
     preset: 'netlify',
   },
   pwa: {
+    registerType: 'autoUpdate',
     manifest: {
       name: 'Israel Portfolio',
       short_name: 'Israel Dev',
       description: 'Portafolio Profesional de Josue Israel',
       theme_color: '#0f172a', // Tu color Navy 900
       background_color: '#ffffff',
+      display: 'standalone',
       icons: [
         {
-          src: 'pwa-192x192.png', // Tienes que poner estos iconos en /public
+          src: 'pwa-192-192.png', // Tienes que poner estos iconos en /public
           sizes: '192x192',
           type: 'image/png'
         },
         {
-          src: 'pwa-512x512.png',
+          src: 'pwa-512-512.png',
           sizes: '512x512',
           type: 'image/png'
         }
@@ -50,6 +52,7 @@ export default defineNuxtConfig({
     },
     workbox: {
       navigateFallback: '/',
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
     devOptions: {
       enabled: true,
