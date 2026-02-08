@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     domains: ['images.unsplash.com'],
   },
   nitro: {
-    preset: 'netlify',
+    preset: 'netlify-static',
   },
   pwa: {
     strategies: 'generateSW',
