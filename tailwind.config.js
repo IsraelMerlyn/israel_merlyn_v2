@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -15,24 +16,25 @@ module.exports = {
       colors: {
         // Tu paleta personalizada
         navy: {
-          900: "#09124D", // Fondo principal
-          800: "#0C1751", // Fondo secundario / Tarjetas
+          900: "#09124D", // Tu color principal oscuro
+          800: "#0C1751",
         },
         blue: {
-          600: "#1B3573", // Acento principal
-          500: "#445B84", // Acento secundario
+          600: "#1B3573", // Subtítulos / Acentos
+          500: "#445B84",
         },
         slate: {
-          700: "#2F3156", // Bordes / Separadores
-          600: "#565A73", // Texto secundario oscuro
+          700: "#2F3156", // Párrafos oscuros
+          600: "#565A73", // Párrafos medios
         },
         steel: {
-          300: "#B4B7BC", // Iconos inactivos / Detalles
+          300: "#B4B7BC", // Detalles
         },
         mist: {
-          200: "#DDE0E5", // Texto secundario claro
+          200: "#DDE0E5", // Textos secundarios en dark mode
         },
-        white: "#FEFEFE", // Texto principal
+        white: "#FEFEFE",
+      
       },
       fontFamily: {
         // Sugerencia: Define una fuente técnica y una de lectura
