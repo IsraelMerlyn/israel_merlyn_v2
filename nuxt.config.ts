@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   },
   image: {
-    provider: 'ipx',
+    // provider: 'ipx',
     domains: ['images.unsplash.com'],
   },
   nitro: {
