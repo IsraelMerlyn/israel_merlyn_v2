@@ -13,6 +13,7 @@ export const useResume = () => {
                     title: 'Ssr. Frontend Developer (Vue.js)',
                     period: 'Noviembre 2025 - Actualidad',
                     description: '​Lideré​ ​la​ ​reestructuración​ ​arquitectónica​ ​del​ ​proyecto​ ​en​ ​Vue.js,​ ​asumiendo​ ​la​ ​responsabilidad​ ​end-to-end del desarrollo de módulos completos.Creación​​de​​catálogos​​dinámicos​​(CRUDs​​relacionales)​​integrando​​consumo​​avanzado​​de​​APIs​​REST,​​con validación estricta de respuestas y manejo de errores',
+
                     techStack: ['Vue.js', 'JavaScript', 'APIs REST', 'UI/UX']
                 },
                 {
@@ -145,10 +146,10 @@ export const useResume = () => {
     const projects: ProjectItem[] = [
         {
             id: 1,
-            title: 'Ecosistema Fullstack Gestión',
+            title: 'Destino Fullstack ',
             category: 'fullstack',
             description: ' Frontend Nuxt comunicado con Supabase.',
-            image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop', // Placeholder Tech
+            image: '~/projects/ruta.png', // Placeholder Tech
             techStack: ['Nuxt.js', 'Supabase', 'Nitro', 'SSR/CSR', 'Tailwind'],
             links: {
                 demo: 'https://conocetudestino.netlify.app/',
@@ -157,13 +158,13 @@ export const useResume = () => {
         },
         {
             id: 2,
-            title: 'Chef Pocket: App de Recetas',
-            category: 'mobile',
-            description: 'Experiencia móvil nativa en Flutter. Implementa patrón Provider para gestión de estado, persistencia local con SQLite y modo Offline-First para cocinas sin conexión.',
-            image: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=1000&auto=format&fit=crop', // Placeholder Cocina
-            techStack: ['Flutter', 'Dart', 'Provider', 'SQLite', 'Mockoon'],
+            title: 'Landing Pages',
+            category: 'fullstack',
+            description: 'Lading pages para encontrar empresa',
+            image: '~/projects/landing.png', // Placeholder Cocina
+            techStack: ['Nuxt.js', 'Tailwind', 'SSR/CSR', 'Tailwind'],
             links: {
-                demo: '#', // Link a la PlayStore o APK
+                demo: 'https://consultoriaisraelmerlyn.netlify.app/', // Link a la PlayStore o APK
                 repo: '#'
             }
         },
