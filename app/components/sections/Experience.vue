@@ -1,12 +1,14 @@
 <script setup lang="ts">
-
+import { useTechColors } from '~/composable/useTechColors';
 import { useResume } from '~/composable/useResume';
 const { workExperience, teachingExperience } = useResume()
+const { getColor } = useTechColors();
 const activeTab = ref('dev') // 'dev' | 'teacher'
 
 const toggleTab = (tab: string) => {
   activeTab.value = tab
 }
+
 </script>
 
 <template>
@@ -72,7 +74,7 @@ const toggleTab = (tab: string) => {
                   {{ role.description }}
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span v-for="tech in role.techStack" :key="tech" 
+                  <span v-for="tech in role.techStack" :key="tech" :class="getColor(tech)"
                         class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300 border border-blue-100 dark:border-blue-900/30">
                     {{ tech }}
                   </span>

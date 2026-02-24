@@ -37,6 +37,7 @@ export interface ProjectItem {
 export interface Skill {
     name: string;
     icon: string;
+    class?: string;
 }
 
 export interface SkillCategory {
