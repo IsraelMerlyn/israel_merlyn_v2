@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { ProjectCategory } from '~/type/resume';
 import { useResume } from '~/composable/useResume';
-
+import { useTechColors } from '~/composable/useTechColors';
+const { getColor } = useTechColors();
 const { projects } = useResume()
 const activeCategory = ref<ProjectCategory | 'all'>('all')
 
@@ -70,7 +71,8 @@ const categories: { key: ProjectCategory | 'all'; label: string }[] = [
 
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span v-for="tech in project.techStack.slice(0, 3)" :key="tech"
-                                class="text-xs bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-700 px-2 py-1 rounded text-slate-600 dark:text-slate-300">
+                            
+                                class="text-xs font-semibold px-2.5 py-0.5 rounded-full border transition-colors cursor-default" :class="getColor(tech)">
                                 {{ tech }}
                             </span>
                         </div>

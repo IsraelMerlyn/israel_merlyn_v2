@@ -6,6 +6,8 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/tailwindcss', '@vite-pwa/nuxt', '@nuxt/content', '@nuxt/icon', '@nuxt/image', '@nuxtjs/google-fonts'],
   app: {
+    pageTransition: { name: 'blur', mode: 'out-in' },
+    layoutTransition: { name: 'blur', mode: 'out-in' },
     head: {
       title: 'Tu Nombre | Frontend Developer & Docente',
       meta: [

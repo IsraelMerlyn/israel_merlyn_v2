@@ -46,3 +46,18 @@ useSeoMeta({
     <InstallPwa />
   </ClientOnly> -->
 </template>
+
+<style>
+/* La magia de la transición "blur" */
+.blur-enter-active,
+.blur-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.blur-enter-from,
+.blur-leave-to {
+  opacity: 0;
+  filter: blur(10px); /* Esto le da el toque "coquetón" */
+  transform: translateY(10px); /* Un pequeño salto elegante */
+}
+</style>
