@@ -22,6 +22,7 @@ useSeoMeta({
     <main>
       <SectionsTheHero /> 
       
+      
       <div class="reveal"> 
         <LazySectionsExperience /> 
       </div>
@@ -41,4 +42,7 @@ useSeoMeta({
   
   <UiMagicCursor />
   <!-- <InstallPwa /> -->
+   <!-- <ClientOnly>
+    <InstallPwa />
+  </ClientOnly> -->
 </template>

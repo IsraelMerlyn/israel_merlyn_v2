@@ -9,9 +9,16 @@ export const useResume = () => {
             name: 'NARAES',
             roles: [
                 {
+                    id: 10,
+                    title: 'Ssr. Frontend Developer (Vue.js)',
+                    period: 'Noviembre 2025 - Actualidad',
+                    description: '​Lideré​ ​la​ ​reestructuración​ ​arquitectónica​ ​del​ ​proyecto​ ​en​ ​Vue.js,​ ​asumiendo​ ​la​ ​responsabilidad​ ​end-to-end del desarrollo de módulos completos.Creación​​de​​catálogos​​dinámicos​​(CRUDs​​relacionales)​​integrando​​consumo​​avanzado​​de​​APIs​​REST,​​con validación estricta de respuestas y manejo de errores',
+                    techStack: ['Vue.js', 'JavaScript', 'APIs REST', 'UI/UX']
+                },
+                {
                     id: 11,
                     title: 'Frontend Developer',
-                    period: 'Diciembre 2024 - Actualidad',
+                    period: 'Diciembre 2024 - Octubre 2025',
                     description: 'Desarrollo de interfaces de usuario utilizando Vue.js, con integración de consumo de APIs en las vistas para datos dinámicos y mejora de la interacción del usuario.',
                     techStack: ['Vue.js', 'JavaScript', 'APIs REST', 'UI/UX']
                 },
@@ -94,7 +101,7 @@ export const useResume = () => {
                     id: 102,
                     title: 'Asesor de Residentes Profesionales',
                     period: 'Octubre 2025 - Actualidad',
-                    description: 'Mentoría y guía en el desarrollo de soluciones tecnológicas reales para empresas e instituciones.',
+                    description: 'Actué como Tech Lead consultivo para proyectos en React Native,​definiendo la viabilidad tecnológica, implementando Clean Architecture, asegurando la integración de​ ​APIs con JWT / Postman y optimizando la experiencia de usuario (UI/UX).',
                     techStack: ['Mentoría', 'Gestión de Proyectos', 'Supervisión Técnica']
                 },
                 {
@@ -140,11 +147,11 @@ export const useResume = () => {
             id: 1,
             title: 'Ecosistema Fullstack Gestión',
             category: 'fullstack',
-            description: 'Arquitectura escalable que orquesta operaciones CRUD complejas. Frontend reactivo en Vue.js comunicado con un Backend robusto en Spring Boot bajo seguridad JWT.',
+            description: ' Frontend Nuxt comunicado con Supabase.',
             image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop', // Placeholder Tech
-            techStack: ['Vue.js', 'Spring Boot 3', 'MySQL', 'JWT', 'Bootstrap'],
+            techStack: ['Nuxt.js', 'Supabase', 'Nitro', 'SSR/CSR', 'Tailwind'],
             links: {
-                demo: 'https://tu-demo.com',
+                demo: 'https://conocetudestino.netlify.app/',
                 repo: 'https://github.com/tu-usuario/repo'
             }
         },
@@ -191,47 +198,122 @@ export const useResume = () => {
             title: 'Core Stack (Dominio Alto)',
             icon: 'lucide:cpu',
             skills: [
-                { name: 'Vue.js', icon: 'logos:vue' },
-                { name: 'Nuxt 3', icon: 'logos:nuxt-icon' },
-                { name: 'React Native', icon: 'logos:react' },
-                { name: 'Tailwind CSS', icon: 'logos:tailwindcss-icon' },
-                { name: 'JavaScript (ES6+)', icon: 'logos:javascript' },
-                { name: 'Spring Boot', icon: 'logos:spring-icon' }
+                {
+                    name: 'Vue.js',
+                    icon: 'logos:vue',
+                    class: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20'
+                },
+                {
+                    name: 'Nuxt 3',
+                    icon: 'logos:nuxt-icon',
+                    class: 'bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400 border-green-200 dark:border-green-500/20'
+                },
+                {
+                    name: 'React Native',
+                    icon: 'logos:react',
+                    class: 'bg-sky-100 text-sky-700 dark:bg-sky-500/10 dark:text-sky-400 border-sky-200 dark:border-sky-500/20'
+                },
+                {
+                    name: 'Tailwind CSS',
+                    icon: 'logos:tailwindcss-icon',
+                    class: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400 border-cyan-200 dark:border-cyan-500/20'
+                },
+                {
+                    name: 'JavaScript (ES6+)',
+                    icon: 'logos:javascript',
+                    class: 'bg-amber-100 text-amber-700 dark:bg-amber-500/10 dark:text-amber-400 border-amber-200 dark:border-amber-500/20'
+                },
+                {
+                    name: 'Spring Boot',
+                    icon: 'logos:spring-icon',
+                    class: 'bg-lime-100 text-lime-700 dark:bg-lime-500/10 dark:text-lime-400 border-lime-200 dark:border-lime-500/20'
+                }
             ]
         },
         {
             title: 'Mobile & Frontend',
             icon: 'lucide:smartphone',
             skills: [
-                { name: 'Flutter', icon: 'logos:flutter' },
-                { name: 'Kotlin', icon: 'logos:kotlin-icon' },
-                { name: 'React.js', icon: 'logos:react' },
-                { name: 'Bootstrap', icon: 'logos:bootstrap' },
-                { name: 'HTML5/CSS3', icon: 'logos:html-5' }
+                {
+                    name: 'Flutter',
+                    icon: 'logos:flutter',
+                    class: 'bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border-blue-200 dark:border-blue-500/20'
+                },
+                {
+                    name: 'Kotlin',
+                    icon: 'logos:kotlin-icon',
+                    class: 'bg-violet-100 text-violet-700 dark:bg-violet-500/10 dark:text-violet-400 border-violet-200 dark:border-violet-500/20'
+                },
+                {
+                    name: 'React.js',
+                    icon: 'logos:react',
+                    class: 'bg-sky-100 text-sky-700 dark:bg-sky-500/10 dark:text-sky-400 border-sky-200 dark:border-sky-500/20'
+                },
+                {
+                    name: 'Bootstrap',
+                    icon: 'logos:bootstrap',
+                    class: 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400 border-purple-200 dark:border-purple-500/20'
+                },
+                {
+                    name: 'HTML5/CSS3',
+                    icon: 'logos:html-5',
+                    class: 'bg-orange-100 text-orange-700 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
+                }
             ]
         },
         {
             title: 'Backend & Bases de Datos',
             icon: 'lucide:database',
             skills: [
-                { name: 'SQL Server', icon: 'devicon:microsoftsqlserver' },
-                { name: 'Laravel', icon: 'logos:laravel' },
-                { name: 'Python / Flask', icon: 'logos:python' },
-                { name: 'Java', icon: 'logos:java' }
+                {
+                    name: 'SQL Server',
+                    icon: 'devicon:microsoftsqlserver',
+                    class: 'bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 border-red-200 dark:border-red-500/20'
+                },
+                {
+                    name: 'Laravel',
+                    icon: 'logos:laravel',
+                    class: 'bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400 border-rose-200 dark:border-rose-500/20'
+                },
+                {
+                    name: 'Python / Flask',
+                    icon: 'logos:python',
+                    class: 'bg-slate-100 text-slate-700 dark:bg-slate-500/10 dark:text-slate-400 border-slate-200 dark:border-slate-500/20'
+                },
+                {
+                    name: 'Java',
+                    icon: 'logos:java',
+                    class: 'bg-orange-100 text-orange-800 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
+                }
             ]
         },
         {
             title: 'Herramientas & Agilidad',
             icon: 'lucide:trello',
             skills: [
-                { name: 'Git / GitHub', icon: 'logos:git-icon' },
-                { name: 'Scrum / Agile', icon: 'logos:jira' },
-                { name: 'Postman', icon: 'logos:postman-icon' },
-                { name: 'Figma (UI/UX)', icon: 'logos:figma' }
+                {
+                    name: 'Git / GitHub',
+                    icon: 'logos:git-icon',
+                    class: 'bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-300 border-orange-100 dark:border-orange-500/20'
+                },
+                {
+                    name: 'Scrum / Agile',
+                    icon: 'logos:jira',
+                    class: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300 border-blue-100 dark:border-blue-500/20'
+                },
+                {
+                    name: 'Postman',
+                    icon: 'logos:postman-icon',
+                    class: 'bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-300 border-orange-100 dark:border-orange-500/20'
+                },
+                {
+                    name: 'Figma (UI/UX)',
+                    icon: 'logos:figma',
+                    class: 'bg-pink-100 text-pink-700 dark:bg-pink-500/10 dark:text-pink-400 border-pink-200 dark:border-pink-500/20'
+                }
             ]
         }
     ];
-
     return {
         workExperience,
         teachingExperience,
