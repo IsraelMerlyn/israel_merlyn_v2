@@ -105,7 +105,8 @@ const toggleTab = (tab: string) => {
                 </p>
                 <div class="flex flex-wrap gap-2">
                   <span v-for="tech in role.techStack" :key="tech" 
-                        class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-300 border border-emerald-100 dark:border-emerald-900/30">
+                  :class="getColor(tech)"
+                        class="text-xs font-semibold px-2.5 py-0.5 rounded-full border transition-colors cursor-default">
                     {{ tech }}
                   </span>
                 </div>
