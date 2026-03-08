@@ -168,6 +168,18 @@ export const useResume = () => {
             }
         },
         {
+            id: 6,
+            title: 'Aplicacion de Gastos',
+            category: 'mobile',
+            description: 'Aplicacion para llevar el control de gastos',
+            image: '/projects/home.png', // Placeholder Tech
+            techStack: ['Flutter', 'SQL Lite', 'Provider', 'Material UI', 'Dart'],
+            links: {
+                demo: 'https://github.com/IsraelMerlyn/gastos_app.git',
+                repo: 'https://github.com/IsraelMerlyn/gastos_app.git'
+            }
+        },
+        {
             id: 2,
             title: 'Landing Pages',
             category: 'fullstack',
@@ -189,6 +201,30 @@ export const useResume = () => {
             links: {
                 demo: '#', // Link a la doc de Swagger
                 repo: '#'
+            }
+        },
+        {
+            id: 7,
+            title: 'APIRest Biblioteca',
+            category: 'backend',
+            description: 'API RESTful para biblioteca escolar, alta, baja y libros prestados, entregas',
+            image: '/projects/APIREst.png', // Placeholder Código
+            techStack: ['Spring Boot', 'Swagger UI', 'Swagger', 'MySQL', ''],
+            links: {
+                demo: 'https://github.com/IsraelMerlyn/ApiRest_conRelaciones_Spring.git', // Link a la doc de Swagger
+                repo: 'https://github.com/IsraelMerlyn/ApiRest_conRelaciones_Spring.git'
+            }
+        },
+        {
+            id: 8,
+            title: 'APIRest TODO List',
+            category: 'backend',
+            description: 'API RESTful para tareas pendientes, alta, baja y tareas pendientes, entregas',
+            image: '/projects/apiRest_tareas.png', // Placeholder Código
+            techStack: ['Spring Boot', 'Swagger UI', 'Swagger', 'MySQL', ''],
+            links: {
+                demo: 'https://github.com/IsraelMerlyn/ApiRest_conRelaciones_Spring.git', // Link a la doc de Swagger
+                repo: 'https://github.com/IsraelMerlyn/ApiRest_conRelaciones_Spring.git'
             }
         },
         {
