@@ -39,12 +39,12 @@ useSeoMeta({
     <LazyLayoutTheFooter />
 
   </div>
-  
+  <LayoutMobileNav />
   <UiMagicCursor />
   <!-- <InstallPwa /> -->
-   <!-- <ClientOnly>
+   <ClientOnly>
     <InstallPwa />
-  </ClientOnly> -->
+  </ClientOnly>
 </template>
 
 <style>

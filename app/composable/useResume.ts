@@ -149,10 +149,21 @@ export const useResume = () => {
             title: 'Destino Fullstack ',
             category: 'fullstack',
             description: ' Frontend Nuxt comunicado con Supabase.',
-            image: '~/projects/ruta.png', // Placeholder Tech
+            image: '/projects/rutas.png',
             techStack: ['Nuxt.js', 'Supabase', 'Nitro', 'SSR/CSR', 'Tailwind'],
             links: {
                 demo: 'https://conocetudestino.netlify.app/',
+                repo: 'https://github.com/tu-usuario/repo'
+            }
+        }, {
+            id: 5,
+            title: 'Aniversario Tecnologico Tlaxiaco',
+            category: 'fullstack',
+            description: 'Registro y Generacion de QR',
+            image: '/projects/tec.png', // Placeholder Tech
+            techStack: ['React', 'Supabase', 'Redux', 'SSR/CSR', 'Bootstrap 5'],
+            links: {
+                demo: 'https://tlaxiacoaniversario.vercel.app/',
                 repo: 'https://github.com/tu-usuario/repo'
             }
         },
@@ -161,7 +172,7 @@ export const useResume = () => {
             title: 'Landing Pages',
             category: 'fullstack',
             description: 'Lading pages para encontrar empresa',
-            image: '~/projects/landing.png', // Placeholder Cocina
+            image: '/projects/landing.png', // Placeholder Cocina
             techStack: ['Nuxt.js', 'Tailwind', 'SSR/CSR', 'Tailwind'],
             links: {
                 demo: 'https://consultoriaisraelmerlyn.netlify.app/', // Link a la PlayStore o APK
@@ -228,6 +239,15 @@ export const useResume = () => {
                     name: 'Spring Boot',
                     icon: 'logos:spring-icon',
                     class: 'bg-lime-100 text-lime-700 dark:bg-lime-500/10 dark:text-lime-400 border-lime-200 dark:border-lime-500/20'
+                },
+                {
+                    name: 'Bootstrap',
+                    icon: 'logos:bootstrap',
+                    class: 'bg-purple-100 text-purple-700 dark:bg-purple-500/10 dark:text-purple-400 border-purple-200 dark:border-purple-500/20'
+                }, {
+                    name: 'Java',
+                    icon: 'logos:java',
+                    class: 'bg-orange-100 text-orange-800 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
                 }
             ]
         },
@@ -240,11 +260,11 @@ export const useResume = () => {
                     icon: 'logos:flutter',
                     class: 'bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border-blue-200 dark:border-blue-500/20'
                 },
-                {
-                    name: 'Kotlin',
-                    icon: 'logos:kotlin-icon',
-                    class: 'bg-violet-100 text-violet-700 dark:bg-violet-500/10 dark:text-violet-400 border-violet-200 dark:border-violet-500/20'
-                },
+                // {
+                //     name: 'Kotlin',
+                //     icon: 'logos:kotlin-icon',
+                //     class: 'bg-violet-100 text-violet-700 dark:bg-violet-500/10 dark:text-violet-400 border-violet-200 dark:border-violet-500/20'
+                // },
                 {
                     name: 'React.js',
                     icon: 'logos:react',
@@ -262,32 +282,32 @@ export const useResume = () => {
                 }
             ]
         },
-        {
-            title: 'Backend & Bases de Datos',
-            icon: 'lucide:database',
-            skills: [
-                {
-                    name: 'SQL Server',
-                    icon: 'devicon:microsoftsqlserver',
-                    class: 'bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 border-red-200 dark:border-red-500/20'
-                },
-                {
-                    name: 'Laravel',
-                    icon: 'logos:laravel',
-                    class: 'bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400 border-rose-200 dark:border-rose-500/20'
-                },
-                {
-                    name: 'Python / Flask',
-                    icon: 'logos:python',
-                    class: 'bg-slate-100 text-slate-700 dark:bg-slate-500/10 dark:text-slate-400 border-slate-200 dark:border-slate-500/20'
-                },
-                {
-                    name: 'Java',
-                    icon: 'logos:java',
-                    class: 'bg-orange-100 text-orange-800 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
-                }
-            ]
-        },
+        // {
+        //     title: 'Backend & Bases de Datos',
+        //     icon: 'lucide:database',
+        //     skills: [
+        //         {
+        //             name: 'SQL Server',
+        //             icon: 'devicon:microsoftsqlserver',
+        //             class: 'bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 border-red-200 dark:border-red-500/20'
+        //         },
+        //         {
+        //             name: 'Laravel',
+        //             icon: 'logos:laravel',
+        //             class: 'bg-rose-100 text-rose-700 dark:bg-rose-500/10 dark:text-rose-400 border-rose-200 dark:border-rose-500/20'
+        //         },
+        //         {
+        //             name: 'Python / Flask',
+        //             icon: 'logos:python',
+        //             class: 'bg-slate-100 text-slate-700 dark:bg-slate-500/10 dark:text-slate-400 border-slate-200 dark:border-slate-500/20'
+        //         },
+        //         {
+        //             name: 'Java',
+        //             icon: 'logos:java',
+        //             class: 'bg-orange-100 text-orange-800 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
+        //         }
+        //     ]
+        // },
         {
             title: 'Herramientas & Agilidad',
             icon: 'lucide:trello',

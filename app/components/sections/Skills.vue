@@ -59,7 +59,8 @@ const { skillCategories } = useResume()
         </div>
 
       </div>
-
+<!-- 
+      
       <div class="mt-16 p-8 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center shadow-2xl relative overflow-hidden">
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div class="text-left">
@@ -69,11 +70,11 @@ const { skillCategories } = useResume()
           <a href="#contacto" class="px-6 py-3 bg-white text-blue-700 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
             Hablemos de Docencia
           </a>
-        </div>
+        </div> 
         
         <div class="absolute top-0 right-0 -mr-10 -mt-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
-      </div>
+      </div>-->
 
     </div>
   </section>
