@@ -34,11 +34,16 @@ useSeoMeta({
       <div class="reveal">
         <LazySectionsProjects />
       </div>
+
+      <div class="reveal">
+        <LazySectionsContact />
+      </div>
     </main>
 
     <LazyLayoutTheFooter />
 
   </div>
+  <ContactModal />
   <LayoutMobileNav />
   <UiMagicCursor />
   <!-- <InstallPwa /> -->

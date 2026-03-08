@@ -1,5 +1,7 @@
 <script setup>
 import { useTheme } from '~/composable/useTheme'
+import { useContactModal } from '~/composable/useContactModal'
+const { openContact } = useContactModal()
 const { isDark, toggleTheme } = useTheme()
 const isMenuOpen = ref(false)
 const route = useRoute()
@@ -55,7 +57,7 @@ const scrollToSection = (id) => {
           <Icon v-if="isDark" name="lucide:sun" size="20" />
           <Icon v-else name="lucide:moon" size="20" />
         </button>
-        <UiBaseButton variant="primary" to="#contacto" class="!py-2 !px-4 text-sm">Hablemos</UiBaseButton>
+        <button @click="openContact"  class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-5 rounded-lg transition-colors shadow-lg shadow-blue-600/20 text-sm">Hablemos</button>
       </div>
 
       <div class="md:hidden flex items-center gap-4 relative z-50">

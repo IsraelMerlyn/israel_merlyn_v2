@@ -84,7 +84,8 @@ export default defineNuxtConfig({
     display: 'swap',
     prefetch: true,
     preconnect: true,
-  }
+  },
+
 
 
 })
