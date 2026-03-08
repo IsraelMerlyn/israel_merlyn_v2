@@ -168,6 +168,18 @@ export const useResume = () => {
             }
         },
         {
+            id: 9,
+            title: 'Aplicacion de NASA + PWA',
+            category: 'backend',
+            description: 'Sitio web donde se consume la API de la NASA, PWA, Arquitectura limpia',
+            image: '/projects/Panel.png', // Placeholder Código
+            techStack: ['Vue 3', 'PWA', 'Clean Architecture', 'NASA API', 'Pinia'],
+            links: {
+                demo: ' https://webapp-nasa-ten.vercel.app/', // Link a la doc de Swagger
+                repo: 'https://github.com/IsraelMerlyn/webapp-nasa.git'
+            }
+        },
+        {
             id: 6,
             title: 'Aplicacion de Gastos',
             category: 'mobile',
