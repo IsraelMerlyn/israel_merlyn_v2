@@ -57,7 +57,7 @@ const submitForm = async () => {
       
       <div class="text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-black text-navy-900 dark:text-white mb-4">
-          Trabajemos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Juntos</span>
+          Trabajemos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">Juntos</span>
         </h2>
         <p class="text-slate-600 dark:text-slate-400 text-lg">¿Tienes un proyecto en mente o una propuesta? Escríbeme y lo hacemos realidad.</p>
       </div>

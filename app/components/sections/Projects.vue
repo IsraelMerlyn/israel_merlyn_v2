@@ -47,7 +47,7 @@ const closeModal = () => {
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-navy-900 dark:text-white mb-4">
                     Proyectos <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-emerald-400">Destacados</span>
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">Destacados</span>
                 </h2>
                 <p class="text-slate-600 dark:text-mist-200 text-lg">
                     Haz clic en cualquier proyecto para ver los detalles, código y demostración.
