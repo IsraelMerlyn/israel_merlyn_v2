@@ -14,10 +14,10 @@
             Ya sea para desarrollar una aplicación compleja o capacitar a tu equipo en tecnologías modernas.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="mailto:tuemail@gmail.com" class="px-8 py-3 bg-white text-navy-900 font-bold rounded-xl hover:bg-blue-50 transition-colors">
+            <a href="mailto:israelmerlyn@gmail.com" class="px-8 py-3 bg-white text-navy-900 font-bold rounded-xl hover:bg-blue-50 transition-colors">
               Envíame un correo
             </a>
-            <a href="https://linkedin.com" target="_blank" class="px-8 py-3 border border-slate-700 text-slate-300 font-bold rounded-xl hover:border-white hover:text-white transition-colors">
+            <a href="https://www.linkedin.com/in/josuevasquez" target="_blank" class="px-8 py-3 border border-slate-700 text-slate-300 font-bold rounded-xl hover:border-white hover:text-white transition-colors">
               LinkedIn
             </a>
           </div>
