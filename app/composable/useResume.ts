@@ -106,12 +106,20 @@ export const useResume = () => {
                     techStack: ['Mentoría', 'Gestión de Proyectos', 'Supervisión Técnica']
                 },
                 {
+                    id: 104,
+                    title: 'Instructor -MODULO II Desarrollo Ágil para escritorio',
+                    period: '12 al 16 de Enero 2026',
+                    description: 'Impartí el Módulo I: Fundamentos de Desarrollo Ágil, enseñando principios SCRUM y prácticas modernas.',
+                    techStack: ['SCRUM', 'PWA', 'Lean Development', 'ClickUP', 'Git']
+                },
+                {
                     id: 103,
-                    title: 'Instructor - Diplomado en Desarrollo Ágil',
+                    title: 'Instructor -MODULO I Fundamentos de Desarrollo Ágil',
                     period: '11 al 15 de Agosto 2025',
                     description: 'Impartí el Módulo I: Fundamentos de Desarrollo Ágil, enseñando principios SCRUM y prácticas modernas.',
                     techStack: ['SCRUM', 'Kanban', 'Lean Development', 'Coaching Ágil']
-                }
+                },
+
             ]
         },
         {
