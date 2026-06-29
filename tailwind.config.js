@@ -2,50 +2,63 @@
 module.exports = {
   darkMode: 'class',
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
+    "./app/components/**/*.{js,vue,ts}",
+    "./app/layouts/**/*.vue",
+    "./app/pages/**/*.vue",
+    "./app/plugins/**/*.{js,ts}",
+    "./app/app.vue",
+    "./app/error.vue",
     "./app.vue",
     "./error.vue",
-    "./composables/**/*.{js,ts}"
-  ],
-  css: [
-    '~/assets/css/main.css'
+    "./app/composable/**/*.{js,ts}"
   ],
   theme: {
     extend: {
       colors: {
-
-        navy: {
-          900: "#0f172a",
-          800: "#1e293b",
-          700: "#334155",
+        primary: {
+          DEFAULT: "#2563EB", // Azul eléctrico
+          hover: "#1D4ED8"
         },
-        blue: {
-          600: "#1B3573",
-          500: "#445B84",
+        navy: {
+          900: "#0A0F1E", // Fondo oscuro profundo
+          800: "#111827", // Superficie para tarjetas/contenedores
+          700: "#1F2937", // Bordes
+          600: "#374151"
         },
         slate: {
-          700: "#2F3156",
-          600: "#565A73",
+          700: "#334155",
+          600: "#475569",
+          500: "#64748B" // Texto atenuado (text-muted)
         },
         steel: {
-          300: "#B4B7BC",
+          300: "#D1D5DB"
         },
         mist: {
-          200: "#DDE0E5",
+          200: "#E5E7EB"
         },
-        white: "#FEFEFE",
-
+        text: {
+          primary: "#F1F5F9",
+          muted: "#64748B"
+        },
+        accent: {
+          cyan: "#06B6D4",
+          violet: "#8B5CF6"
+        }
       },
       fontFamily: {
-
         sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono: ['JetBrains Mono', 'monospace']
       },
-
-    },
+      boxShadow: {
+        'glow-blue': '0 0 20px rgba(37, 99, 235, 0.15)',
+        'glow-cyan': '0 0 20px rgba(6, 182, 212, 0.15)',
+        'glow-violet': '0 0 20px rgba(139, 92, 246, 0.15)',
+        'glow-primary': '0 0 30px rgba(37, 99, 235, 0.25)'
+      },
+      borderRadius: {
+        '4xl': '2rem'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }

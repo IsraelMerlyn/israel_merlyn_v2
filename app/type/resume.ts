@@ -27,6 +27,8 @@ export interface ProjectItem {
     image: string; // URL de la imagen
     techStack: string[];
     category: ProjectCategory;
+    status?: 'En desarrollo' | 'En producción' | 'Play Store';
+    technicalDetail?: string;
     links: {
         demo?: string;
         repo?: string;

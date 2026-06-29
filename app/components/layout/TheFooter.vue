@@ -14,7 +14,7 @@
             Ya sea para desarrollar una aplicación compleja o capacitar a tu equipo en tecnologías modernas.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="mailto:israelmerlyn@gmail.com" class="px-8 py-3 bg-white text-navy-900 font-bold rounded-xl hover:bg-blue-50 transition-colors">
+            <a href="mailto:isramerlyn@gmail.com" class="px-8 py-3 bg-white text-navy-900 font-bold rounded-xl hover:bg-blue-50 transition-colors">
               Envíame un correo
             </a>
             <a href="https://www.linkedin.com/in/josuevasquez" target="_blank" class="px-8 py-3 border border-slate-700 text-slate-300 font-bold rounded-xl hover:border-white hover:text-white transition-colors">
@@ -25,23 +25,21 @@
 
         <div class="flex flex-col items-center md:items-end gap-2">
           <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold mb-2">
-            IS
+            JI
           </div>
-          <span class="text-slate-500 text-sm">Tlaxiaco, Oaxaca, México</span>
+          <span class="text-slate-500 text-sm">Tlaxiaco, Oaxaca (Disposición de reubicación)</span>
         </div>
       </div>
 
       <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-        <p>&copy; 2026 Israel. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Josue Israel. Todos los derechos reservados.</p>
         <div class="flex gap-6">
-         <a href="#" aria-label="Visitar perfil de GitHub" class="hover:text-white transition-colors">
-    <Icon name="uil:github" size="24" /> </a>
-  <a href="#" aria-label="Visitar perfil de Twitter" class="hover:text-white transition-colors">
-     <Icon name="uil:twitter" size="24" />
-  </a>
-  <a href="#" aria-label="Visitar canal de YouTube" class="hover:text-white transition-colors">
-     <Icon name="uil:youtube" size="24" />
-  </a>
+          <a href="https://github.com/IsraelMerlyn" target="_blank" aria-label="Visitar perfil de GitHub" class="hover:text-white transition-colors">
+            <Icon name="uil:github" size="24" />
+          </a>
+          <a href="https://www.linkedin.com/in/josuevasquez" target="_blank" aria-label="Visitar perfil de LinkedIn" class="hover:text-white transition-colors">
+            <Icon name="uil:linkedin" size="24" />
+          </a>
         </div>
       </div>
     </div>

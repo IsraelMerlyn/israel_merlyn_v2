@@ -66,62 +66,12 @@ const closeModal = () => {
 
           <TransitionGroup name="list" tag="div" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-                <article 
+                <SectionsProjectCard 
                     v-for="project in filteredProjects" 
                     :key="project.id"
-                    class="group relative bg-white dark:bg-navy-800 rounded-[2rem] overflow-hidden border-2 border-slate-100 dark:border-navy-700/50 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 hover:border-blue-500/50 transition-all duration-500 flex flex-col h-full hover:-translate-y-2"
-                >
-                    <div class="relative w-full h-72 overflow-hidden bg-slate-100 dark:bg-navy-900 cursor-pointer" @click="openModal(project)">
-                        <NuxtImg :src="project.image" :alt="project.title" format="webp" loading="lazy"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        
-                        <div class="absolute inset-0 bg-navy-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        
-                        <span class="absolute top-5 right-5 bg-white/95 dark:bg-navy-900/95 backdrop-blur-md text-blue-600 dark:text-blue-400 text-xs font-black tracking-widest px-4 py-2 rounded-xl shadow-lg border border-slate-100 dark:border-navy-600">
-                            {{ project.category.toUpperCase() }}
-                        </span>
-                    </div>
-
-                    <div class="p-8 flex flex-col flex-grow relative">
-                        
-                        <h3 @click="openModal(project)" class="text-2xl md:text-3xl font-black text-navy-900 dark:text-white mb-3 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                            {{ project.title }}
-                        </h3>
-                        
-                        <p class="text-slate-600 dark:text-slate-400 text-base mb-8 flex-grow line-clamp-3 leading-relaxed">
-                            {{ project.description }}
-                        </p>
-
-                        <div class="flex flex-wrap gap-2.5 mb-8">
-                            <span v-for="tech in project.techStack.slice(0, 5)" :key="tech"
-                                class="text-xs font-bold px-3 py-1 rounded-md border transition-colors cursor-default dark:text-opacity-100" :class="getColor(tech)">
-                                {{ tech }}
-                            </span>
-                            <span v-if="project.techStack.length > 5" class="text-sm font-bold px-3 py-1.5 rounded-lg border bg-slate-100 text-slate-600 dark:bg-navy-700 dark:text-slate-400 dark:border-navy-600 shadow-sm">
-                                +{{ project.techStack.length - 5 }}
-                            </span>
-                        </div>
-
-                        <div class="pt-6 border-t-2 border-slate-100 dark:border-navy-700/50 flex items-center justify-between mt-auto">
-                            
-                            <div class="flex gap-5">
-                                <a v-if="project.links.repo && project.links.repo !== '#'" :href="project.links.repo" target="_blank"
-                                   class="p-2 -ml-2 text-slate-400 hover:text-navy-900 dark:text-slate-500 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-navy-700 rounded-lg transition-all" title="Código en GitHub">
-                                    <Icon name="lucide:github" size="24" />
-                                </a>
-                                <a v-if="project.links.demo && project.links.demo !== '#'" :href="project.links.demo" target="_blank"
-                                   class="p-2 text-slate-400 hover:text-blue-600 dark:text-slate-500 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-all" title="Demo en Vivo">
-                                    <Icon name="lucide:external-link" size="24" />
-                                </a>
-                            </div>
-                            
-                            <button @click="openModal(project)" class="px-5 py-2.5 text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-white dark:hover:text-white bg-blue-50 hover:bg-blue-600 dark:bg-blue-500/10 dark:hover:bg-blue-500 rounded-xl flex items-center gap-2 transition-all">
-                                Leer más <Icon name="lucide:arrow-right" size="18" />
-                            </button>
-                        </div>
-
-                    </div>
-                </article>
+                    :project="project"
+                    @open-details="openModal(project)"
+                />
 
             </TransitionGroup>
             <div v-if="filteredProjects.length === 0"

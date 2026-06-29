@@ -1,80 +1,93 @@
-<script setup>
+<script setup lang="ts">
 import { useResume } from '~/composable/useResume';
 const { skillCategories } = useResume()
+
+const getDominioLabel = (title: string) => {
+  if (title.includes('Core') || title.includes('Alto')) return 'Core / Expert';
+  if (title.includes('Backend') || title.includes('Medio')) return 'Advanced';
+  return 'Collaborative';
+}
+
+const getCategoryDescription = (title: string) => {
+  if (title.includes('Core') || title.includes('Alto')) {
+    return 'Tecnologías principales y arquitectura core';
+  }
+  if (title.includes('Backend') || title.includes('Medio')) {
+    return 'Diseño de servicios REST y persistencia';
+  }
+  return 'Metodologías de entrega y herramientas secundarias';
+}
 </script>
 
 <template>
-  <section id="habilidades" class="py-24 bg-slate-50 dark:bg-navy-900 transition-colors duration-500 relative">
+  <section id="habilidades" class="py-24 bg-slate-50 dark:bg-navy-900/60 transition-colors duration-500 relative overflow-hidden">
     
-    <div class="max-w-7xl mx-auto px-6">
+    <!-- Esferas de brillo premium de fondo -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       
-      <div class="mb-16 text-center md:text-left">
-        <h2 class="text-4xl font-bold text-navy-900 dark:text-white mb-4">
-          Arsenal <span class="text-blue-600">Tecnológico</span>
+      <div class="mb-16 text-center md:text-left space-y-4">
+        <h2 class="text-4xl md:text-5xl font-black text-navy-900 dark:text-white tracking-tight">
+          Arsenal <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Tecnológico</span>
         </h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg">
-          No me caso con una tecnología. Elijo la herramienta correcta para cada problema, 
-          pero estas son mis armas de elección principal.
+        <p class="text-slate-600 dark:text-slate-400 max-w-2xl text-lg leading-relaxed">
+          Selección de herramientas y metodologías aplicadas en producción para resolver problemas complejos de rendimiento, escala y experiencia de usuario.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <div v-for="(category, index) in skillCategories" :key="category.title"
-             class="group relative p-6 rounded-3xl border border-slate-200 dark:border-navy-700 bg-white dark:bg-navy-800 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 hover:-translate-y-1"
+             class="group p-8 rounded-[2rem] border border-slate-200/60 dark:border-navy-700/60 bg-white/80 dark:bg-navy-800/30 backdrop-blur-md shadow-sm hover:shadow-xl hover:border-blue-500/20 dark:hover:border-blue-500/20 transition-all duration-300"
              :class="{ 
-               'md:col-span-2': index === 0, /* La primera categoría (Core Stack) ocupa 2 espacios */
-               'md:row-span-2': index === 2  /* La tercera categoría se hace alta (opcional) */
+               'lg:col-span-2': index === 0, 
+               'lg:col-span-1': index !== 0 
              }">
           
-          <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-navy-900 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
-            <Icon :name="category.icon" size="24" />
+          <!-- Encabezado de la Categoría -->
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400 flex items-center justify-center shadow-inner transition-transform group-hover:scale-110">
+              <Icon :name="category.icon" size="24" />
+            </div>
+            <div>
+              <h3 class="text-xl font-extrabold tracking-tight text-navy-900 dark:text-white">
+                {{ category.title }}
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                {{ getCategoryDescription(category.title) }}
+              </p>
+            </div>
           </div>
 
-          <h3 class="text-xl font-bold text-navy-900 dark:text-white mb-6">
-            {{ category.title }}
-          </h3>
-
+          <!-- Grid de Habilidades -->
           <div class="grid gap-4" 
-               :class="index === 0 ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-1'">
+               :class="index === 0 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-1'">
             
             <div v-for="skill in category.skills" :key="skill.name" 
-                 class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-navy-700 transition-colors">
+                 class="group/skill flex items-center justify-between p-4 rounded-2xl border transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                 :class="skill.class || 'border-slate-100 dark:border-navy-700/40 bg-slate-50/50 dark:bg-navy-900/20 text-navy-900 dark:text-white hover:bg-white dark:hover:bg-navy-900/60'">
               
-              <Icon :name="skill.icon" size="28" class="grayscale group-hover:grayscale-0 transition-all duration-300" />
-              
-              <div>
-                <span class="font-bold text-sm text-slate-700 dark:text-slate-200 block">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-white dark:bg-navy-800/80 border border-slate-100 dark:border-navy-700/40 shadow-sm flex items-center justify-center transition-transform group-hover/skill:rotate-6">
+                  <Icon :name="skill.icon" size="22" />
+                </div>
+                <span class="font-bold text-sm tracking-tight text-navy-900 dark:text-white">
                   {{ skill.name }}
                 </span>
-                <div class="w-full h-1 bg-slate-100 dark:bg-navy-900 rounded-full mt-1 overflow-hidden">
-                  <div class="h-full bg-blue-500 rounded-full w-[80%] group-hover:animate-pulse"></div>
-                </div>
               </div>
+              
+              <span class="text-[9px] font-mono font-black tracking-wider uppercase opacity-60 group-hover/skill:opacity-100 transition-opacity">
+                {{ getDominioLabel(category.title) }}
+              </span>
             </div>
 
           </div>
 
-          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/0 to-blue-500/5 rounded-tr-3xl pointer-events-none"></div>
         </div>
 
       </div>
-<!-- 
-      
-      <div class="mt-16 p-8 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center shadow-2xl relative overflow-hidden">
-        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="text-left">
-            <h3 class="text-2xl font-bold mb-2">¿Enseñas lo que programas?</h3>
-            <p class="text-blue-100">La mejor forma de dominar un stack es explicarlo. Mi perfil docente potencia mi código.</p>
-          </div>
-          <a href="#contacto" class="px-6 py-3 bg-white text-blue-700 font-bold rounded-xl hover:bg-blue-50 transition-colors shadow-lg">
-            Hablemos de Docencia
-          </a>
-        </div> 
-        
-        <div class="absolute top-0 right-0 -mr-10 -mt-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-64 h-64 bg-black/10 rounded-full blur-3xl"></div>
-      </div>-->
 
     </div>
   </section>

@@ -5,11 +5,11 @@ import { useScrollReveal } from './composable/useScrollReveal';
 useScrollReveal()
 
 useSeoMeta({
-  title: 'Israel | Frontend Developer & Docente',
-  ogTitle: 'Israel | Frontend Developer & Docente',
-  description: 'Portafolio profesional. Vue.js, Nuxt.',
-  ogDescription: 'Portafolio profesional. Desarrollador Frontend y Docente en Vue.js, Nuxt .',
-  ogImage: 'https://portafolio-israelmerlyn.netlify.app/home.png', // ¡Sube una imagen a la carpeta public!
+  title: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3',
+  ogTitle: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3',
+  description: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.',
+  ogDescription: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.',
+  ogImage: 'https://portafolio-israelmerlyn.netlify.app/home.png',
   twitterCard: 'summary_large_image',
 })
 </script>

@@ -108,8 +108,8 @@ const scrollToSection = (id) => {
               <div class="p-8 pb-12 text-center shrink-0">
                  <p class="text-slate-500 mb-4 text-sm uppercase tracking-widest">Sígueme</p>
                  <div class="flex justify-center gap-8">
-                    <a href="#" class="text-slate-400 hover:text-blue-600"><Icon name="lucide:github" size="28" /></a>
-                    <a href="#" class="text-slate-400 hover:text-blue-600"><Icon name="lucide:linkedin" size="28" /></a>
+                    <a href="https://github.com/IsraelMerlyn" target="_blank" class="text-slate-400 hover:text-blue-600"><Icon name="lucide:github" size="28" /></a>
+                    <a href="https://www.linkedin.com/in/josuevasquez" target="_blank" class="text-slate-400 hover:text-blue-600"><Icon name="lucide:linkedin" size="28" /></a>
                  </div>
               </div>
 
