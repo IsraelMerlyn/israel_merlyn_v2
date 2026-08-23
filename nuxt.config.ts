@@ -22,25 +22,25 @@ export default defineNuxtConfig({
     pageTransition: { name: 'blur', mode: 'out-in' },
     layoutTransition: { name: 'blur', mode: 'out-in' },
     head: {
-      title: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3',
+      title: 'Josue Israel Vasquez | SSr Software Engineer · Flutter & Vue 3',
       htmlAttrs: {
         lang: 'es'
       },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
+        { name: 'description', content: 'Portafolio de Josue Israel Vasquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://portafolio-israelmerlyn.netlify.app/' },
-        { property: 'og:title', content: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3' },
-        { property: 'og:description', content: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
+        { property: 'og:title', content: 'Josue Israel Vasquez | SSr Software Engineer · Flutter & Vue 3' },
+        { property: 'og:description', content: 'Portafolio de Josue Israel Vasquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
         { property: 'og:image', content: 'https://portafolio-israelmerlyn.netlify.app/home.png' },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://portafolio-israelmerlyn.netlify.app/' },
-        { name: 'twitter:title', content: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3' },
-        { name: 'twitter:description', content: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
+        { name: 'twitter:title', content: 'Josue Israel Vasquez | SSr Software Engineer · Flutter & Vue 3' },
+        { name: 'twitter:description', content: 'Portafolio de Josue Israel Vasquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.' },
         { name: 'twitter:image', content: 'https://portafolio-israelmerlyn.netlify.app/home.png' }
       ],
       link: [
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Josue Israel Portfolio',
       short_name: 'Israel Dev',
-      description: 'Portafolio Profesional de Josue Israel Vázquez',
+      description: 'Portafolio Profesional de Josue Israel Vasquez',
       theme_color: '#0A0F1E',
       background_color: '#0A0F1E',
       display: 'standalone',

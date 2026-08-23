@@ -276,7 +276,7 @@ const accessBadges: Record<string, { label: string; class: string; icon: string 
             <!-- Footer del Modal con Links -->
             <div class="p-6 bg-zinc-950/80 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 shrink-0">
               <span class="text-xs font-mono text-zinc-500">
-                Josue Israel Vázquez · Software Architecture
+                Josue Israel Vasquez · Software Architecture
               </span>
 
               <div class="flex items-center gap-3 w-full sm:w-auto">

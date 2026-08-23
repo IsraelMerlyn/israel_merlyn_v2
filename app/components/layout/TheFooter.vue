@@ -32,7 +32,7 @@
       </div>
 
       <div class="border-t border-zinc-800/80 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500">
-        <p>&copy; 2026 Josue Israel Vázquez. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Josue Israel Vasquez. Todos los derechos reservados.</p>
         <div class="flex gap-6">
           <a href="https://github.com/IsraelMerlyn" target="_blank" aria-label="Visitar perfil de GitHub" class="hover:text-zinc-100 transition-colors">
             <Icon name="lucide:github" size="20" />
