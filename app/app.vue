@@ -5,7 +5,34 @@ useScrollReveal()
 
 useHead({
   htmlAttrs: { class: 'dark' },
-  bodyAttrs: { class: 'bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300' }
+  bodyAttrs: { class: 'bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300' },
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        'name': 'Israel Merlyn',
+        'alternateName': ['Josué Israel Vázquez', 'Israel Vázquez'],
+        'jobTitle': 'SSr Software Engineer',
+        'url': 'https://portafolio-israelmerlyn.netlify.app',
+        'sameAs': [
+          'https://github.com/israelmerlyn',
+          'https://www.linkedin.com/in/israelmerlyn'
+        ],
+        'knowsAbout': [
+          'Flutter',
+          'Vue.js',
+          'Nuxt.js',
+          'Spring Boot',
+          'Clean Architecture',
+          'Feature-Sliced Design',
+          'Artificial Intelligence'
+        ],
+        'description': 'SSr Software Engineer especializado en Flutter, Vue/Nuxt y Spring Boot.'
+      })
+    }
+  ]
 })
 
 useSeoMeta({
@@ -23,7 +50,7 @@ useSeoMeta({
     
     <LayoutTheHeader />
     
-    <main>
+    <main class="pb-24 md:pb-0">
       <SectionsTheHero /> 
       
       <div class="reveal"> 

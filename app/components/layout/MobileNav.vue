@@ -4,9 +4,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const navItems = [
   { name: 'Inicio', icon: 'lucide:home', href: '#' },
   { name: 'Experiencia', icon: 'lucide:briefcase', href: '#experiencia' },
-  { name: 'Workflow IA', icon: 'lucide:cpu', href: '#ai-workflow' },
+  { name: 'IA Workflow', icon: 'lucide:cpu', href: '#ai-workflow' },
   { name: 'Proyectos', icon: 'lucide:layers', href: '#proyectos' },
-  // { name: 'Contacto', icon: 'lucide:mail', href: '#contacto' }
+  { name: 'Contacto', icon: 'lucide:mail', href: '#contacto' }
 ]
 
 const activeSection = ref('#')
@@ -55,26 +55,26 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="md:hidden fixed bottom-3 left-3 right-3 z-[90] pointer-events-none safe-bottom">
-    <nav class="pointer-events-auto max-w-lg mx-auto bg-zinc-900/90 backdrop-blur-xl border border-zinc-800/90 shadow-2xl rounded-2xl p-1.5 overflow-x-hidden">
-      <ul class="flex justify-between items-center w-full gap-1">
-        <li v-for="item in navItems" :key="item.name" class="flex-1">
+  <div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 pointer-events-none safe-bottom w-[calc(100%-2rem)] max-w-md mx-auto">
+    <nav class="pointer-events-auto w-full bg-zinc-900/90 backdrop-blur-md border border-zinc-800 rounded-full px-3 py-2 shadow-2xl shadow-black/80 overflow-x-hidden">
+      <ul class="flex items-center justify-around gap-1 w-full">
+        <li v-for="item in navItems" :key="item.name">
           <a 
             :href="item.href"
             @click.prevent="scrollToSection(item.href)"
-            class="flex flex-col items-center justify-center min-h-[48px] px-1 py-1 rounded-xl transition-all duration-200 group text-center whitespace-nowrap"
+            class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full transition-all duration-200 group text-center whitespace-nowrap text-xs font-medium"
             :class="activeSection === item.href 
-              ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 font-bold shadow-sm' 
+              ? 'text-emerald-400 bg-emerald-500/10 rounded-full border border-emerald-500/20 font-semibold shadow-sm' 
               : 'text-zinc-400 hover:text-zinc-200 border border-transparent'"
           >
             <Icon 
               :name="item.icon" 
-              size="20" 
-              class="transition-transform duration-200 group-active:scale-90"
+              size="18" 
+              class="transition-transform duration-200 shrink-0"
               :class="activeSection === item.href ? 'text-emerald-400 scale-105' : 'text-zinc-400 group-hover:text-zinc-200'" 
             />
             
-            <span class="text-[9px] font-semibold tracking-tight mt-0.5 leading-none truncate max-w-full">
+            <span class="text-[11px] tracking-tight leading-none">
               {{ item.name }}
             </span>
           </a>
