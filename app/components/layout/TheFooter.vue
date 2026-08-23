@@ -25,14 +25,14 @@
 
         <div class="flex flex-col items-center md:items-end gap-2">
           <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-2xl font-black mb-2 shadow-lg shadow-blue-600/20">
-            JI
+            IM
           </div>
           <span class="text-zinc-500 text-xs font-mono">Tlaxiaco, Oaxaca · Disposición de reubicación / Remoto</span>
         </div>
       </div>
 
       <div class="border-t border-zinc-800/80 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500">
-        <p>&copy; 2026 Josue Israel Vasquez. Todos los derechos reservados.</p>
+        <p>© 2026 Israel Merlyn — SSr Software Engineer. Construido con Nuxt 3 & Tailwind CSS.</p>
         <div class="flex gap-6">
           <a href="https://github.com/IsraelMerlyn" target="_blank" aria-label="Visitar perfil de GitHub" class="hover:text-zinc-100 transition-colors">
             <Icon name="lucide:github" size="20" />

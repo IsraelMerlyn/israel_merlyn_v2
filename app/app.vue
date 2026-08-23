@@ -9,10 +9,10 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Josue Israel Vasquez | SSr Software Engineer & Tech Lead · Flutter, Nuxt 3 & Spring Boot',
-  ogTitle: 'Josue Israel Vasquez | SSr Software Engineer & Tech Lead',
-  description: 'Portafolio profesional de Josue Israel Vasquez, SSr Software Engineer y Tech Lead. Especialista en arquitecturas de software escalables en Flutter, Vue 3, Nuxt 3, Spring Boot e Inteligencia Artificial.',
-  ogDescription: 'Portafolio profesional de Josue Israel Vasquez, SSr Software Engineer y Tech Lead. Especialista en arquitecturas de software escalables en Flutter, Vue 3, Nuxt 3, Spring Boot e Inteligencia Artificial.',
+  title: 'Israel Merlyn | SSr Software Engineer',
+  description: 'SSr Software Engineer especializado en Flutter, Vue/Nuxt y Spring Boot. Enfocado en Clean Architecture, Feature-Sliced Design (FSD) y flujos de ingeniería asistidos por IA.',
+  ogTitle: 'Israel Merlyn | SSr Software Engineer',
+  ogDescription: 'SSr Software Engineer especializado en Flutter, Vue/Nuxt y Spring Boot. Enfocado en Clean Architecture, Feature-Sliced Design (FSD) y flujos de ingeniería asistidos por IA.',
   ogImage: 'https://portafolio-israelmerlyn.netlify.app/home.png',
   twitterCard: 'summary_large_image',
 })

@@ -9,8 +9,8 @@ const metrics = [
   },
   {
     value: '4 Devs',
-    label: 'Liderados en Producción',
-    detail: 'Mentoría ágil, arquitectura de software y Code Reviews',
+    label: 'Mentoring & Code Reviews',
+    detail: 'Guía técnica y Code Reviews de célula ágil',
     icon: 'lucide:users',
     color: 'text-blue-400 bg-blue-500/10 border-blue-500/20'
   },
@@ -55,15 +55,15 @@ const architecturePills = [
         
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-950/40 text-blue-300 border border-blue-800/60 shadow-sm animate-fade-in-up">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Software Engineer SSr & Tech Lead · Remote / Relocation
+          SSr Software Engineer · Remote / Relocation
         </div>
         
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-zinc-100 tracking-tight animate-fade-in-up delay-100">
-          Transformo requerimientos complejos en <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400">sistemas escalables</span> Web, Móviles y Backend.
+          Arquitectura limpia y desarrollo escalable en <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400">Web, Mobile y Backend.</span>
         </h1>
         
         <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal animate-fade-in-up delay-200">
-          Especialista en desarrollo <strong class="text-zinc-200">Fullstack & Mobile (Flutter · Vue 3 / Nuxt 3 · Spring Boot)</strong>. Lidero equipos de ingeniería, diseño arquitecturas offline-first, garantizo calidad de software y optimizo el ciclo de desarrollo con herramientas asistidas por IA.
+          Soy SSr Software Engineer. Diseño e implemento sistemas robustos usando Flutter, Vue 3 / Nuxt y Spring Boot. Mi enfoque técnico se basa en Clean Architecture, FSD y la integración de flujos asistidos por IA para maximizar la calidad y velocidad de entrega.
         </p>
         
         <!-- Acciones Principales -->
