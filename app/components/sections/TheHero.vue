@@ -1,58 +1,146 @@
+<script setup lang="ts">
+const metrics = [
+  {
+    value: '50+',
+    label: 'Obras Públicas Auditadas',
+    detail: 'Control en tiempo real de presupuestos e infraestructura municipal',
+    icon: 'lucide:building-2',
+    color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20'
+  },
+  {
+    value: '4 Devs',
+    label: 'Liderados en Producción',
+    detail: 'Mentoría ágil, arquitectura de software y Code Reviews',
+    icon: 'lucide:users',
+    color: 'text-blue-400 bg-blue-500/10 border-blue-500/20'
+  },
+  {
+    value: '60 FPS',
+    label: 'Rendimiento Móvil',
+    detail: 'Procesamiento de imagen pesado usando Dart Isolates',
+    icon: 'lucide:zap',
+    color: 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+  },
+  {
+    value: '0 Token Leaks',
+    label: 'Seguridad SSO Enforzada',
+    detail: 'Shell App inter-dominio con HTTP-Only Cookies anti-XSS',
+    icon: 'lucide:shield-check',
+    color: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20'
+  }
+]
+
+const architecturePills = [
+  'Clean Architecture',
+  'Feature-Sliced Design (FSD)',
+  'Offline-First Sync',
+  'Liquibase DB Versioning',
+  'AI-Assisted Workflow'
+]
+</script>
+
 <template>
-  <section class="min-h-screen flex items-center justify-center pt-32 pb-12 md:pt-20 relative overflow-hidden">
+  <section class="min-h-screen flex items-center justify-center pt-28 pb-16 relative overflow-hidden bg-zinc-950 transition-colors duration-500">
     
+    <!-- Background Glows -->
     <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute top-20 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-72 h-72 bg-navy-800/10 dark:bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/4 right-5 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-10 left-5 w-[400px] h-[400px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10">
       
-      <div class="space-y-8 text-center md:text-left">
-        <div class="inline-block px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-4 animate-fade-in-up delay-100">
-           Disponible para proyectos
+      <!-- Columna Izquierda: Mensaje Ejecutivo & Posicionamiento -->
+      <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-950/40 text-blue-300 border border-blue-800/60 shadow-sm animate-fade-in-up">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Software Engineer SSr & Tech Lead · Remote / Relocation
         </div>
         
-        <h1 class="text-4xl md:text-7xl font-bold leading-tight text-navy-900 dark:text-white animate-fade-in-up delay-200">
-          Hola <br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Soy Josue Israel Vázquez</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-zinc-100 tracking-tight animate-fade-in-up delay-100">
+          Transformo requerimientos complejos en <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-400">sistemas escalables</span> Web, Móviles y Backend.
         </h1>
         
-        <p class="text-lg md:text-xl text-slate-600 dark:text-steel-300 max-w-lg mx-auto md:mx-0 leading-relaxed animate-fade-in-up delay-300">
-          <strong>SSr Software Engineer | Flutter · Vue 3 · Nuxt · Spring Boot</strong>.<br />
-          Tech Lead de 2 equipos, Code Review owner y Docente en el TecNM, enfocado en el desarrollo ágil de software robusto y escalable.
+        <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal animate-fade-in-up delay-200">
+          Especialista en desarrollo <strong class="text-zinc-200">Fullstack & Mobile (Flutter · Vue 3 / Nuxt 3 · Spring Boot)</strong>. Lidero equipos de ingeniería, diseño arquitecturas offline-first, garantizo calidad de software y optimizo el ciclo de desarrollo con herramientas asistidas por IA.
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4 animate-fade-in-up delay-400">
-          <UiBaseButton variant="primary" to="#proyectos" class="w-full sm:w-auto">Ver Portafolio</UiBaseButton>
-          <UiBaseButton variant="outline" to="#contacto" class="w-full sm:w-auto">Descargar CV</UiBaseButton>
+        <!-- Acciones Principales -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2 animate-fade-in-up delay-300">
+          <UiBaseButton variant="primary" to="#proyectos" class="w-full sm:w-auto text-base py-3.5 px-8 shadow-lg shadow-blue-600/20">
+            Explorar Case Studies <Icon name="lucide:arrow-down-right" size="18" class="ml-1" />
+          </UiBaseButton>
+          <UiBaseButton variant="outline" to="#experiencia" class="w-full sm:w-auto text-base py-3.5 px-8">
+            Ver Trayectoria Técnica
+          </UiBaseButton>
         </div>
-      </div>
 
-      <div class="relative group perspective-1000 mt-8 md:mt-0 animate-fade-in-up delay-500">
-        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-        <div class="relative bg-white dark:bg-navy-800 p-6 rounded-2xl border border-mist-200 dark:border-navy-700 shadow-2xl transform transition-transform group-hover:rotate-y-2 duration-500 overflow-hidden">
-          <div class="overflow-x-auto">
-            <pre class="font-mono text-xs md:text-sm text-slate-700 dark:text-slate-300">
-<span class="text-purple-400">const</span> <span class="text-blue-500 font-bold">engineer</span> = {
-  <span class="text-cyan-600 dark:text-cyan-400">name</span>: <span class="text-emerald-600 dark:text-emerald-400">"Josue Israel Vázquez"</span>,
-  <span class="text-cyan-600 dark:text-cyan-400">role</span>: <span class="text-emerald-600 dark:text-emerald-400">"SSr Software Engineer"</span>,
-  <span class="text-cyan-600 dark:text-cyan-400">stack</span>: {
-    <span class="text-cyan-600 dark:text-cyan-400">mobile</span>: [<span class="text-emerald-600 dark:text-emerald-400">"Flutter"</span>, <span class="text-emerald-600 dark:text-emerald-400">"BLoC"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Clean Architecture"</span>, <span class="text-emerald-600 dark:text-emerald-400">"FSD"</span>],
-    <span class="text-cyan-600 dark:text-cyan-400">frontend</span>: [<span class="text-emerald-600 dark:text-emerald-400">"Vue 3"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Nuxt"</span>, <span class="text-emerald-600 dark:text-emerald-400">"TypeScript"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Pinia"</span>],
-    <span class="text-cyan-600 dark:text-cyan-400">backend</span>: [<span class="text-emerald-600 dark:text-emerald-400">"Spring Boot"</span>, <span class="text-emerald-600 dark:text-emerald-400">"Liquibase"</span>, <span class="text-emerald-600 dark:text-emerald-400">"PostgreSQL"</span>],
-  },
-  <span class="text-cyan-600 dark:text-cyan-400">currentFocus</span>: <span class="text-emerald-600 dark:text-emerald-400">"Scaneame → Play Store"</span>,
-  <span class="text-cyan-600 dark:text-cyan-400">openTo</span>: <span class="text-emerald-600 dark:text-emerald-400">"remote opportunities"</span>,
-};</pre>
+        <!-- Badges Arquitectónicos Inferiores -->
+        <div class="pt-4 animate-fade-in-up delay-400">
+          <p class="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-3">Enfoque & Arquitectura de Software</p>
+          <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+            <span 
+              v-for="pill in architecturePills" 
+              :key="pill"
+              class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-zinc-900 text-zinc-300 border border-zinc-800 shadow-sm"
+            >
+              {{ pill }}
+            </span>
           </div>
         </div>
+
+      </div>
+
+      <!-- Columna Derecha: Panel Ejecutivo de Métricas e Impacto Reales -->
+      <div class="lg:col-span-5 relative mt-4 lg:mt-0 animate-fade-in-up delay-500">
+        
+        <div class="relative bg-zinc-900/80 backdrop-blur-xl p-8 rounded-3xl border border-zinc-800 shadow-2xl space-y-6">
+          
+          <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+            <div>
+              <h2 class="text-lg font-bold text-zinc-100 flex items-center gap-2">
+                <Icon name="lucide:activity" class="text-blue-500" size="20" /> Métricas de Impacto Directo
+              </h2>
+              <p class="text-xs text-zinc-400">Resultados verificables en producción</p>
+            </div>
+            <span class="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 rounded-md border border-emerald-500/20">
+              Verified Prod
+            </span>
+          </div>
+
+          <!-- Grilla de KPIs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div 
+              v-for="metric in metrics" 
+              :key="metric.label"
+              class="p-4 rounded-2xl bg-zinc-950/70 border border-zinc-800/80 transition-all hover:-translate-y-1 hover:border-zinc-700"
+            >
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl sm:text-3xl font-black text-zinc-100">
+                  {{ metric.value }}
+                </span>
+                <div :class="`p-2 rounded-xl border ${metric.color}`">
+                  <Icon :name="metric.icon" size="18" />
+                </div>
+              </div>
+              <p class="text-xs font-bold text-zinc-200 mb-0.5">{{ metric.label }}</p>
+              <p class="text-[11px] text-zinc-400 leading-snug">{{ metric.detail }}</p>
+            </div>
+          </div>
+
+          <!-- Banner Informativo Inferior del Panel -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-zinc-900 via-zinc-900/90 to-zinc-950 border border-zinc-800 flex items-start gap-3">
+            <Icon name="lucide:terminal" size="20" class="text-blue-400 shrink-0 mt-0.5" />
+            <div class="text-xs text-zinc-300 leading-relaxed">
+              <span class="font-bold text-white">Metodología:</span> Integración de pruebas estáticas con SonarQube, desarrollo guiado por historias de usuario y flujos asistidos por agentes de IA con revisión humana rigurosa.
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Las animaciones fadeInUp y su retraso se definen de manera nativa en animations.css */
-</style>

@@ -197,16 +197,75 @@ export const useResume = () => {
     ];
 
 
-    const projects: ProjectItem[] = [
+    const featuredProjects: ProjectItem[] = [
+        {
+            id: 'cv-llm-lab',
+            tier: 'A',
+            title: 'cv-llm-lab: Ingesta Documental & Evaluación Semántica con Spring AI',
+            clientOrContext: 'Arquitectura Backend / Enterprise AI Lab',
+            role: 'Backend & AI Systems Architect',
+            scope: 'Diseño integral de microservicio On-Premise',
+            accessType: 'open_source',
+            statusLabel: 'Código & Arquitectura en GitHub',
+            category: 'backend',
+            description: 'Microservicio On-Premise para ingesta documental, aislamiento de PII y evaluación semántica de compatibilidad de CVs mediante Spring AI y Ollama (Gemma local).',
+            technicalDetail: 'Pipeline desacoplado con Apache PDFBox 3.x para extracción determinista y BeanOutputConverter para validación de esquemas JSON estructurados sin alucinaciones.',
+            problem: 'Riesgos de privacidad al enviar información personal identificable (PII) a APIs cloud y alta tasa de alucinación/falta de tipado estricto al evaluar compatibilidad de candidatos contra vacantes.',
+            technicalChallenge: 'Extracción determinista de texto en PDFs no estructurados y garantía de respuestas en formato JSON fuertemente tipado mediante inferencia local sin degradar la memoria del servidor.',
+            architectureDecision: 'Pipeline desacoplado con Apache PDFBox 3.x para normalización de texto, persistencia intermedia con Spring Data JPA y orquestación con Spring AI + Ollama (Gemma), aplicando BeanOutputConverter para forzar cumplimiento estricto de esquemas JSON.',
+            metrics: [
+                '100% On-Premise (0% fuga de datos sensibles/PII)',
+                '100% de consistencia en contratos JSON estructurados',
+                '< 3.2s tiempo promedio de extracción, inferencia y scoring'
+            ],
+            stackByLayer: [
+                { category: 'Framework & AI', items: ['Java 17', 'Spring Boot 3', 'Spring AI', 'Ollama (Gemma)'] },
+                { category: 'Parsing & Persistencia', items: ['Apache PDFBox 3.x', 'Spring Data JPA', 'H2 / PostgreSQL'] },
+                { category: 'Validación & Tipado', items: ['BeanOutputConverter', 'Jackson', 'REST Multipart'] }
+            ],
+            diagramMermaid: `flowchart TD
+    Client[Cliente / Multipart Request] -->|PDF o TXT| Controller[REST Ingestion Controller]
+    Controller --> Parser[Apache PDFBox 3.x Parser]
+    Parser -->|Texto Normalizado| Repo[(Persistencia JPA)]
+    Repo --> PromptEngine[Spring AI Prompt Template]
+    PromptEngine -->|Prompt + JSON Schema| Ollama[Ollama Engine / Gemma Local]
+    Ollama --> OutputConverter[Spring AI BeanOutputConverter]
+    OutputConverter -->|JSON Fuertemente Tipado| Client`,
+            techStack: ['Java 17', 'Spring Boot 3', 'Spring AI', 'Ollama', 'PDFBox', 'PostgreSQL', 'Jackson'],
+            links: {
+                demo: 'https://github.com/IsraelMerlyn/cv-llm-lab',
+                repo: 'https://github.com/IsraelMerlyn/cv-llm-lab'
+            }
+        },
         {
             id: 1,
-            title: 'Scaneame',
-            category: 'mobile',
-            status: 'Play Store',
-            description: 'Aplicación móvil offline-first para el escaneo inteligente de documentos físicos y procesamiento local de imágenes. Desarrollada bajo arquitectura limpia combinada con FSD en Flutter para garantizar escalabilidad, seguridad e interoperabilidad de librerías nativas.',
-            technicalDetail: 'Implementa isolates (Isolate.run) para procesamiento pesado y compresión en segundo plano, evitando jank en el hilo principal.',
-            image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop',
-            techStack: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'FSD', 'Dio', 'sqflite', 'Isolates'],
+            title: 'ERP Obras Públicas',
+            category: 'fullstack',
+            status: 'En producción',
+            accessType: 'enterprise_private',
+            statusLabel: 'Enterprise / Código Confidencial',
+            description: 'Sistema empresarial (ERP) municipal enfocado en la planeación presupuestal, auditoría en tiempo real y bitácora histórica de aproximadamente 50 proyectos de infraestructura pública.',
+            technicalDetail: 'Implementación de control transaccional estricto con Liquibase para migraciones sin downtime y arquitectura monolítica modular en Spring Boot 3 con frontend en Nuxt 3.',
+            problem: 'Descontrol operativo, falta de trazabilidad en desembolsos presupuestales y riesgo de inconsistencias auditoras en más de 50 obras de infraestructura gubernamental.',
+            technicalChallenge: 'Asegurar la integridad transaccional estricta del historial de cambios sin downtime en base de datos PostgreSQL, garantizando el cumplimiento de normativas de auditoría legal y fiscal.',
+            architectureDecision: 'Diseño de un monolito modular desacoplado en Spring Boot con Liquibase para versionado declarativo de esquemas de BD, reduciendo riesgos de descalce de versiones entre entornos de dev y prod.',
+            metrics: [
+                '50+ obras públicas gestionadas y auditadas en tiempo real',
+                '0 discrepancias en versionado de base de datos PostgreSQL',
+                '100% digitalización del expediente técnico-financiero municipal'
+            ],
+            stackByLayer: {
+                backend: ['Spring Boot 3', 'Java 21', 'Spring Security', 'REST APIs'],
+                frontend: ['Nuxt 3', 'Vue 3', 'TypeScript', 'Tailwind CSS'],
+                database: ['PostgreSQL', 'Liquibase'],
+                architecture: ['Monolito Modular', 'RBAC Security', 'Transaction Management']
+            },
+            diagramMermaid: `graph TD
+    A[Nuxt 3 Web UI / Auditor Dashboard] -->|HTTPS / JWT REST| B[Spring Boot 3 Modular Monolith]
+    B -->|Spring Security RBAC| C[Audit & Finance Core]
+    B -->|Liquibase Version Control| D[(PostgreSQL Enterprise DB)]
+    C -->|PDF / Audit Export| E[Archivado Oficial de Obras]`,
+            techStack: ['Nuxt 3', 'Spring Boot', 'PostgreSQL', 'Liquibase', 'Spring Security', 'TypeScript'],
             links: {
                 demo: '#',
                 repo: '#'
@@ -217,10 +276,36 @@ export const useResume = () => {
             title: 'LuxReport',
             category: 'fullstack',
             status: 'En producción',
-            description: 'Sistema offline-first de reporte geolocalizado para fallas de alumbrado público. Cuenta con aplicación móvil híbrida (Flutter) con sincronización inteligente en segundo plano, backend en Spring Boot, base de datos espacial PostgreSQL y panel administrativo en Nuxt 3 con mapas interactivos de Leaflet.js y algoritmo Haversine para la prevención automática de duplicados.',
-            technicalDetail: 'Usa WorkManager para sincronización diferida en segundo plano y cálculos geográficos optimizados con índices espaciales.',
-            image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1000&auto=format&fit=crop',
-            techStack: ['Flutter', 'Spring Boot', 'PostgreSQL', 'Nuxt 3', 'Leaflet.js', 'Haversine', 'Background Sync'],
+            accessType: 'enterprise_private',
+            statusLabel: 'Enterprise / Sistema Operativo Municipal',
+            description: 'Sistema offline-first de reporte y gestión geolocalizada para alumbrado público. Incluye app móvil Flutter con sync en segundo plano, backend Spring Boot y mapas interactivos con algoritmo Haversine.',
+            technicalDetail: 'Algoritmo Haversine en backend para prevenir reportes duplicados dentro de un radio espacial y WorkManager en Flutter para sincronización diferida.',
+            problem: 'Saturación de cuadrillas operativas por reportes ciudadanos duplicados de la misma luminaria y falta de conectividad móvil en zonas rurales.',
+            technicalChallenge: 'Calcular la proximidad espacial de nuevos reportes en tiempo real para evitar duplicados en la base de datos y garantizar el levantamiento de fallas en offline.',
+            architectureDecision: 'Uso del algoritmo matemático Haversine en la capa de servicio de Spring Boot para clustering espacial y WorkManager en Flutter para cola de peticiones diferidas.',
+            metrics: [
+                'Reducción drástica de reportes duplicados mediante agrupamiento geográfico',
+                'Sincronización en segundo plano < 2 segundos al reconectar señal',
+                'Visualización espacial de fallas en mapas interactivos con Leaflet.js'
+            ],
+            stackByLayer: {
+                backend: ['Spring Boot', 'Java', 'Haversine Clustering'],
+                mobile: ['Flutter', 'Dart', 'BLoC', 'WorkManager (Background Sync)'],
+                frontend: ['Nuxt 3', 'Leaflet.js', 'PostGIS / PostgreSQL'],
+                architecture: ['Offline-First', 'Spatial Indexing', 'Eventual Consistency']
+            },
+            diagramMermaid: `sequenceDiagram
+    autonumber
+    Citizen App (Flutter)->>SQLite Local: Guarda reporte (Offline Mode)
+    Note over Citizen App (Flutter),WorkManager: Sin señal celular
+    WorkManager->>Spring Boot Backend: Sincroniza al detectar red
+    Spring Boot Backend->>Haversine Service: ¿Existe reporte en radio X metros?
+    alt Es Duplicado
+        Haversine Service-->>Spring Boot Backend: Agrupa al ticket existente
+    else Es Nuevo
+        Spring Boot Backend->>PostgreSQL: Crea nuevo ticket de mantenimiento
+    end`,
+            techStack: ['Flutter', 'Spring Boot', 'PostgreSQL', 'Nuxt 3', 'Leaflet.js', 'Haversine'],
             links: {
                 demo: '#',
                 repo: '#'
@@ -228,12 +313,31 @@ export const useResume = () => {
         },
         {
             id: 3,
-            title: 'Hub Municipal',
+            title: 'Hub Municipal (Shell App SSO)',
             category: 'fullstack',
             status: 'En producción',
-            description: 'Plataforma unificada de acceso gubernamental que opera como una Shell App. Centraliza la navegación y las credenciales de usuario mediante sesiones unificadas (Single Sign-On) hacia sistemas satélite desarrollados de manera independiente en Angular y Nuxt 3.',
-            technicalDetail: 'Configuración segura de cookies HTTP-Only y token exchange para mantener sesiones unificadas entre múltiples dominios.',
-            image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop',
+            accessType: 'enterprise_private',
+            statusLabel: 'Enterprise / Micro-Frontends & SSO',
+            description: 'Plataforma unificada de acceso gubernamental que funciona como Shell App. Centraliza la navegación y credenciales (Single Sign-On) hacia subsistemas en Angular 19 y Nuxt 3.',
+            technicalDetail: 'Aislamiento de sesiones inter-dominio mediante HTTP-Only Cookies anti-XSS y Token Exchange seguro en Spring Security.',
+            problem: 'Dispersión de sistemas gubernamentales independientes con autenticaciones duplicadas, generando fricción para los usuarios y riesgos de seguridad en localStorage.',
+            technicalChallenge: 'Compartir la sesión de usuario de forma transparente y segura entre subsistemas desarrollados en frameworks distintos (Angular y Nuxt 3) en dominios separados.',
+            architectureDecision: 'Implementación de arquitectura Shell App con token exchange y cookies HTTP-Only SameSite, previniendo ataques XSS/CSRF y centralizando el control RBAC.',
+            metrics: [
+                '1 solo login unificado (SSO) para múltiples subsistemas municipales',
+                '0 tokens de sesión expuestos en localStorage',
+                'Arquitectura extensible para integrar nuevas apps en Angular/Nuxt'
+            ],
+            stackByLayer: {
+                frontend: ['Nuxt 3 (Shell App)', 'Angular 19 (Satellite Apps)', 'TypeScript'],
+                backend: ['Spring Boot', 'Spring Security', 'OAuth2 / JWT Token Exchange'],
+                architecture: ['Micro-Frontends', 'Shell Architecture', 'HTTP-Only Cookie Auth']
+            },
+            diagramMermaid: `graph LR
+    User[Navegador del Usuario] -->|Login Centralizado| Shell[Nuxt 3 Shell App]
+    Shell -->|Token Exchange / HTTP-Only Cookie| Auth[Spring Security Auth Server]
+    Auth -->|Valid Access Token| Sat1[Sub-sistema Obras (Angular 19)]
+    Auth -->|Valid Access Token| Sat2[Sub-sistema Catastro (Nuxt 3)]`,
             techStack: ['Nuxt 3', 'Angular', 'Spring Boot', 'Spring Security', 'JWT', 'Shell Architecture'],
             links: {
                 demo: '#',
@@ -242,30 +346,53 @@ export const useResume = () => {
         },
         {
             id: 4,
-            title: 'ERP Obras Públicas',
-            category: 'fullstack',
-            status: 'En producción',
-            description: 'Sistema empresarial (ERP) municipal enfocado en la planeación presupuestal, auditoría y bitácora de proyectos de infraestructura pública. Gestiona asignaciones de recursos, avance de obra físico-financiero y generación de documentación oficial requerida por ley.',
-            technicalDetail: 'Usa control transaccional estricto con Liquibase en el backend y validaciones reactivas en Nuxt 3 para auditoría de obra.',
-            image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop',
-            techStack: ['Nuxt 3', 'Spring Boot', 'PostgreSQL', 'Liquibase', 'Spring Security', 'Tailwind CSS'],
+            title: 'Scaneame',
+            category: 'mobile',
+            status: 'Play Store',
+            accessType: 'play_store',
+            statusLabel: 'Disponible en Google Play',
+            description: 'Aplicación móvil offline-first para el escaneo inteligente de documentos físicos y procesamiento local de imágenes, publicada oficialmente en Google Play Store.',
+            technicalDetail: 'Delegación de tareas pesadas de compresión y procesamiento de imagen a Dart Isolates (`Isolate.run`) para garantizar 60 FPS constantes en la interfaz.',
+            problem: 'Lentitud y congelamientos de interfaz en teléfonos móviles de gama media/baja al procesar y comprimir imágenes pesadas en el hilo de UI.',
+            technicalChallenge: 'Ejecutar algoritmos de manipulación de píxeles y compresión de archivos sin bloquear el hilo principal (Event Loop) de Flutter.',
+            architectureDecision: 'Adopción de Feature-Sliced Design (FSD) + Clean Architecture y uso de Isolates para procesamiento multi-hilo en segundo plano.',
+            metrics: [
+                'Publicada y activa en Google Play Store',
+                '60 FPS mantenidos durante la compresión pesada de imágenes',
+                '100% procesamiento local (Privacidad total sin servidor)'
+            ],
+            stackByLayer: {
+                mobile: ['Flutter', 'Dart', 'BLoC / Cubit', 'Dart Isolates', 'sqflite', 'Dio'],
+                architecture: ['Clean Architecture', 'Feature-Sliced Design (FSD)', 'Offline-First']
+            },
+            diagramMermaid: `graph TD
+    UI[Flutter Main Thread / UI] -->|Captura de documento| Controller[BLoC State Management]
+    Controller -->|Delegación de cómputo| Isolate[Dart Isolate Thread]
+    Isolate -->|Compresión & Filtrado Heavy| ImageResult[Píxeles Procesados]
+    Isolate -->>|Retorno asíncrono| UI
+    Controller -->|Persistencia local| DB[(sqflite Local Database)]`,
+            techStack: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'FSD', 'Isolates', 'sqflite'],
             links: {
-                demo: '#',
+                demo: 'https://play.google.com/store/apps/details?id=com.israelmerlyn.scaneame',
                 repo: '#'
             }
-        },
+        }
+    ];
+
+    const secondaryProjects: ProjectItem[] = [
         {
             id: 5,
             title: 'Destino Fullstack',
             category: 'fullstack',
             status: 'En producción',
-            description: 'Aplicación web interactiva para la exploración y recomendación de destinos turísticos. Utiliza renderizado híbrido en Nuxt (SSR/CSR) comunicado con Supabase como backend-as-a-service, desplegando datos dinámicos en mapas e interfaces responsivas.',
-            technicalDetail: 'Optimizado mediante caching y revalidación de datos asíncronos con middlewares y supabase-js.',
-            image: '/projects/rutas.png',
-            techStack: ['Nuxt.js', 'Supabase', 'Nitro', 'SSR/CSR', 'Tailwind CSS'],
+            accessType: 'open_source',
+            statusLabel: 'Código Abierto / Web Live',
+            description: 'Aplicación web interactiva para la exploración de destinos turísticos usando renderizado híbrido (SSR/CSR) en Nuxt 3 y Supabase como backend-as-a-service.',
+            technicalDetail: 'Caching y revalidación asíncrona de datos con middlewares de Nitro y Supabase JS.',
+            techStack: ['Nuxt 3', 'Supabase', 'Nitro', 'SSR/CSR', 'Tailwind CSS'],
             links: {
                 demo: 'https://conocetudestino.netlify.app/',
-                repo: '#'
+                repo: 'https://github.com/IsraelMerlyn'
             }
         },
         {
@@ -273,139 +400,173 @@ export const useResume = () => {
             title: 'Aniversario Tecnológico Tlaxiaco',
             category: 'fullstack',
             status: 'En producción',
-            description: 'Plataforma web de registro y acreditación automática mediante códigos QR para eventos conmemorativos de la institución. Diseñado con React y conectado a base de datos en la nube para sincronización en tiempo real.',
-            technicalDetail: 'Validación instantánea de QR en puerta con lecturas menores a 200ms comunicadas con API REST y Supabase.',
-            image: '/projects/tec.png',
+            accessType: 'open_source',
+            statusLabel: 'Web Evento / Live',
+            description: 'Plataforma web de registro y acreditación mediante códigos QR con validación instantánea en puerta (<200ms) conectada a Supabase.',
+            technicalDetail: 'Lectura de QR en tiempo real e integración con API REST para sincronización instantánea de asistencia.',
             techStack: ['React', 'Supabase', 'Redux', 'Bootstrap 5', 'QR Generation'],
             links: {
                 demo: 'https://tlaxiacoaniversario.vercel.app/',
-                repo: '#'
-            }
-        },
-        {
-            id: 7,
-            title: 'Aplicación de NASA + PWA',
-            category: 'mobile',
-            status: 'En producción',
-            description: 'Aplicación progresiva (PWA) de exploración espacial utilizando las APIs abiertas de la NASA. Desarrollada bajo principios de arquitectura limpia con persistencia reactiva en Pinia.',
-            technicalDetail: 'Configurado con precaching completo de imágenes satelitales y comportamiento offline mediante service worker.',
-            image: '/projects/Panel.png',
-            techStack: ['Vue 3', 'PWA', 'Clean Architecture', 'NASA API', 'Pinia', 'Tailwind CSS'],
-            links: {
-                demo: 'https://webapp-nasa-ten.vercel.app/',
-                repo: 'https://github.com/IsraelMerlyn/webapp-nasa.git'
-            }
-        },
-        {
-            id: 8,
-            title: 'Aplicación de Gastos',
-            category: 'mobile',
-            status: 'En desarrollo',
-            description: 'Herramienta móvil para el control financiero personal que permite registrar transacciones y categorizar egresos/ingresos localmente de forma offline.',
-            technicalDetail: 'Utiliza sqflite con base de datos encriptada y reactividad pura con cubits/bloc para sincronización reactiva.',
-            image: '/projects/home.png',
-            techStack: ['Flutter', 'Dart', 'sqflite', 'BLoC', 'FSD', 'Material UI'],
-            links: {
-                demo: 'https://github.com/IsraelMerlyn/gastos_app.git',
-                repo: 'https://github.com/IsraelMerlyn/gastos_app.git'
+                repo: 'https://github.com/IsraelMerlyn'
             }
         }
     ];
 
+    const projects: ProjectItem[] = [...featuredProjects, ...secondaryProjects];
+
     const skillCategories: SkillCategory[] = [
         {
-            title: 'Dominio Alto (Core Stack)',
-            icon: 'lucide:cpu',
+            title: 'Mobile Engineering',
+            icon: 'lucide:smartphone',
             skills: [
                 {
-                    name: 'Flutter',
+                    name: 'Flutter & Dart',
                     icon: 'logos:flutter',
-                    class: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400 border-cyan-200 dark:border-cyan-500/20'
+                    class: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
                 },
                 {
-                    name: 'Vue.js',
-                    icon: 'logos:vue',
-                    class: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20'
+                    name: 'Clean Arch + FSD',
+                    icon: 'lucide:layers',
+                    class: 'bg-blue-500/10 text-blue-400 border-blue-500/20'
                 },
                 {
-                    name: 'Nuxt 3',
+                    name: 'BLoC / Cubit',
+                    icon: 'lucide:cpu',
+                    class: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
+                },
+                {
+                    name: 'Dart Isolates',
+                    icon: 'lucide:zap',
+                    class: 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                },
+                {
+                    name: 'SQLite (sqflite)',
+                    icon: 'logos:sqlite',
+                    class: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                },
+                {
+                    name: 'EAS & Play Console',
+                    icon: 'simple-icons:googleplay',
+                    class: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
+                }
+            ]
+        },
+        {
+            title: 'Modern Web & Frontend',
+            icon: 'lucide:layout-template',
+            skills: [
+                {
+                    name: 'Vue 3 & Nuxt 3',
                     icon: 'logos:nuxt-icon',
-                    class: 'bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400 border-green-200 dark:border-green-500/20'
+                    class: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                 },
                 {
-                    name: 'JavaScript / TypeScript',
+                    name: 'TypeScript Estricto',
                     icon: 'logos:typescript-icon',
-                    class: 'bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border-blue-200 dark:border-blue-500/20'
+                    class: 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                },
+                {
+                    name: 'Nitro Engine & SSR',
+                    icon: 'lucide:server',
+                    class: 'bg-green-500/10 text-green-400 border-green-500/20'
+                },
+                {
+                    name: 'Pinia & State',
+                    icon: 'logos:pinia',
+                    class: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
                 },
                 {
                     name: 'Tailwind CSS',
                     icon: 'logos:tailwindcss-icon',
-                    class: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400 border-cyan-200 dark:border-cyan-500/20'
+                    class: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
+                },
+                {
+                    name: 'Progressive Web Apps (PWA)',
+                    icon: 'lucide:globe',
+                    class: 'bg-purple-500/10 text-purple-400 border-purple-500/20'
                 }
             ]
         },
         {
-            title: 'Dominio Medio (Backend & Database)',
+            title: 'Backend & Systems',
             icon: 'lucide:database',
             skills: [
                 {
-                    name: 'Spring Boot',
+                    name: 'Spring Boot 3 (Java)',
                     icon: 'logos:spring-icon',
-                    class: 'bg-lime-100 text-lime-700 dark:bg-lime-500/10 dark:text-lime-400 border-lime-200 dark:border-lime-500/20'
+                    class: 'bg-lime-500/10 text-lime-400 border-lime-500/20'
                 },
                 {
-                    name: 'Java',
-                    icon: 'logos:java',
-                    class: 'bg-orange-100 text-orange-800 dark:bg-orange-500/10 dark:text-orange-400 border-orange-200 dark:border-orange-500/20'
+                    name: 'Spring Security (JWT/SSO)',
+                    icon: 'lucide:shield-check',
+                    class: 'bg-red-500/10 text-red-400 border-red-500/20'
                 },
                 {
-                    name: 'PostgreSQL / MySQL',
+                    name: 'Liquibase (DB Versioning)',
+                    icon: 'lucide:database',
+                    class: 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                },
+                {
+                    name: 'PostgreSQL & PostGIS',
                     icon: 'logos:postgresql',
-                    class: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/20'
+                    class: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20'
                 },
                 {
-                    name: 'Git / GitHub',
-                    icon: 'logos:git-icon',
-                    class: 'bg-orange-50 text-orange-600 dark:bg-orange-500/10 dark:text-orange-300 border-orange-100 dark:border-orange-500/20'
+                    name: 'Monolito Modular',
+                    icon: 'lucide:box',
+                    class: 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+                },
+                {
+                    name: 'REST APIs & OpenAPI',
+                    icon: 'lucide:code-2',
+                    class: 'bg-violet-500/10 text-violet-400 border-violet-500/20'
                 }
             ]
         },
         {
-            title: 'Conocimiento & Colaboración',
-            icon: 'lucide:users-2',
+            title: 'Quality & Agile Leadership',
+            icon: 'lucide:award',
             skills: [
                 {
-                    name: 'Inteligencia Artificial (Prompting & APIs)',
-                    icon: 'logos:google-gemini',
-                    class: 'bg-violet-100 text-violet-700 dark:bg-violet-500/10 dark:text-violet-400 border-violet-200 dark:border-violet-500/20'
+                    name: 'Vitest & Unit Testing',
+                    icon: 'logos:vitest',
+                    class: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20'
                 },
                 {
-                    name: 'Angular',
-                    icon: 'logos:angular-icon',
-                    class: 'bg-red-100 text-red-700 dark:bg-red-500/10 dark:text-red-400 border-red-200 dark:border-red-500/20'
-                },
-                {
-                    name: 'React / React Native',
-                    icon: 'logos:react',
-                    class: 'bg-sky-100 text-sky-700 dark:bg-sky-500/10 dark:text-sky-400 border-sky-200 dark:border-sky-500/20'
-                },
-                {
-                    name: 'SonarQube',
+                    name: 'SonarQube Quality',
                     icon: 'logos:sonarqube',
-                    class: 'bg-blue-100 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400 border-blue-200 dark:border-blue-500/20'
+                    class: 'bg-blue-500/10 text-blue-400 border-blue-500/20'
                 },
                 {
-                    name: 'Agile / SCRUM (Code Reviews)',
+                    name: 'Agile & Scrum Training',
                     icon: 'logos:jira',
-                    class: 'bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-300 border-blue-100 dark:border-blue-500/20'
+                    class: 'bg-sky-500/10 text-sky-400 border-sky-500/20'
+                },
+                {
+                    name: 'Code Reviews & DoD',
+                    icon: 'lucide:git-pull-request',
+                    class: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                },
+                {
+                    name: 'AI-Assisted Workflow',
+                    icon: 'logos:google-gemini',
+                    class: 'bg-purple-500/10 text-purple-400 border-purple-500/20'
+                },
+                {
+                    name: 'Azure DevOps & Git',
+                    icon: 'logos:git-icon',
+                    class: 'bg-orange-500/10 text-orange-400 border-orange-500/20'
                 }
             ]
         }
     ];
+
     return {
         workExperience,
         teachingExperience,
         educationHistory,
+        featuredProjects,
+        secondaryProjects,
         projects,
         skillCategories
     };

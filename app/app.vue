@@ -1,27 +1,30 @@
 <script setup>
-import UiMagicCursor from './components/ui/MagicCursor.vue'
 import { useScrollReveal } from './composable/useScrollReveal';
 
 useScrollReveal()
 
+useHead({
+  htmlAttrs: { class: 'dark' },
+  bodyAttrs: { class: 'bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300' }
+})
+
 useSeoMeta({
-  title: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3',
-  ogTitle: 'Josue Israel Vázquez | SSr Software Engineer · Flutter & Vue 3',
-  description: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.',
-  ogDescription: 'Portafolio de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en Flutter, Vue 3, Nuxt 3 y Spring Boot.',
+  title: 'Josue Israel Vázquez | SSr Software Engineer & Tech Lead · Flutter, Nuxt 3 & Spring Boot',
+  ogTitle: 'Josue Israel Vázquez | SSr Software Engineer & Tech Lead',
+  description: 'Portafolio profesional de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en arquitecturas de software escalables en Flutter, Vue 3, Nuxt 3, Spring Boot e Inteligencia Artificial.',
+  ogDescription: 'Portafolio profesional de Josue Israel Vázquez, SSr Software Engineer y Tech Lead. Especialista en arquitecturas de software escalables en Flutter, Vue 3, Nuxt 3, Spring Boot e Inteligencia Artificial.',
   ogImage: 'https://portafolio-israelmerlyn.netlify.app/home.png',
   twitterCard: 'summary_large_image',
 })
 </script>
 
 <template>
-<div class="min-h-screen transition-colors duration-500 bg-white dark:bg-navy-900 text-slate-800 dark:text-slate-200 font-sans selection:bg-blue-500 selection:text-white">
+  <div class="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
     
     <LayoutTheHeader />
     
     <main>
       <SectionsTheHero /> 
-      
       
       <div class="reveal"> 
         <LazySectionsExperience /> 
@@ -29,6 +32,10 @@ useSeoMeta({
      
       <div class="reveal">
         <LazySectionsSkills />
+      </div>
+
+      <div class="reveal">
+        <LazySectionsAiWorkflow />
       </div>
 
       <div class="reveal">
@@ -45,15 +52,12 @@ useSeoMeta({
   </div>
   <ContactModal />
   <LayoutMobileNav />
-  <UiMagicCursor />
-  <!-- <InstallPwa /> -->
-   <ClientOnly>
+  <ClientOnly>
     <InstallPwa />
   </ClientOnly>
 </template>
 
 <style>
-/* La magia de la transición "blur" */
 .blur-enter-active,
 .blur-leave-active {
   transition: all 0.4s ease-in-out;
@@ -62,7 +66,7 @@ useSeoMeta({
 .blur-enter-from,
 .blur-leave-to {
   opacity: 0;
-  filter: blur(10px); /* Esto le da el toque "coquetón" */
-  transform: translateY(10px); /* Un pequeño salto elegante */
+  filter: blur(10px);
+  transform: translateY(10px);
 }
 </style>

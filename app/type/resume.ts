@@ -1,5 +1,6 @@
 // types/resume.ts
 export type ProjectCategory = 'fullstack' | 'mobile' | 'backend' | 'content';
+
 export interface Role {
     id: number;
     title: string;
@@ -20,15 +21,44 @@ export interface InstitutionItem {
     roles: Role[];
 }
 
+export type AccessType = 'enterprise_private' | 'play_store' | 'open_source';
+
+export interface StackLayerGroup {
+    category: string;
+    items: string[];
+}
+
+export interface StackByLayerObject {
+    backend?: string[];
+    frontend?: string[];
+    mobile?: string[];
+    database?: string[];
+    architecture?: string[];
+}
+
+export type StackByLayer = StackByLayerObject | StackLayerGroup[];
+
 export interface ProjectItem {
-    id: number;
+    id: number | string;
+    tier?: 'A' | 'B' | 'C' | 'D';
     title: string;
+    clientOrContext?: string;
+    role?: string;
+    scope?: string;
     description: string;
-    image: string; // URL de la imagen
+    image?: string;
     techStack: string[];
     category: ProjectCategory;
     status?: 'En desarrollo' | 'En producción' | 'Play Store';
+    accessType: AccessType;
+    statusLabel: string;
     technicalDetail?: string;
+    problem?: string;
+    technicalChallenge?: string;
+    architectureDecision?: string;
+    metrics?: string[];
+    stackByLayer?: StackByLayer;
+    diagramMermaid?: string;
     links: {
         demo?: string;
         repo?: string;

@@ -1,5 +1,4 @@
 <script setup>
-// Importamos los iconos necesarios
 import { 
   AcademicCapIcon, 
   UserGroupIcon, 
@@ -48,16 +47,14 @@ const achievements = [
 </script>
 
 <template>
-  <section class="py-24 px-6 bg-slate-900 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-950 opacity-50 pointer-events-none"></div>
-
+  <section class="py-24 px-6 bg-zinc-950 relative overflow-hidden transition-colors duration-500">
     <div class="max-w-7xl mx-auto relative z-10">
       
       <div class="text-center mb-16 space-y-4">
-        <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight">
+        <h2 class="text-3xl md:text-5xl font-black text-zinc-100 tracking-tight">
           Trayectoria & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Impacto</span>
         </h2>
-        <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+        <p class="text-zinc-400 max-w-2xl mx-auto text-base sm:text-lg font-normal">
           No solo escribo código; construyo conocimiento. Mi carrera combina la ejecución técnica con la formación de talento.
         </p>
       </div>
@@ -66,7 +63,7 @@ const achievements = [
         <div 
           v-for="(item, index) in achievements" 
           :key="index"
-          class="group p-6 rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20"
+          class="group p-6 rounded-2xl bg-zinc-900/70 backdrop-blur-md border border-zinc-800 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
           :class="item.border"
         >
           <div :class="`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${item.bg} ${item.color}`">
@@ -74,15 +71,15 @@ const achievements = [
           </div>
           
           <div class="mb-3">
-            <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">
+            <h3 class="text-xl font-bold text-zinc-100 group-hover:text-blue-400 transition-colors">
               {{ item.title }}
             </h3>
-            <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            <span class="text-xs font-semibold uppercase tracking-wider text-zinc-500">
               {{ item.role }}
             </span>
           </div>
 
-          <p class="text-slate-400 leading-relaxed text-sm">
+          <p class="text-zinc-400 leading-relaxed text-sm font-normal">
             {{ item.description }}
           </p>
         </div>
