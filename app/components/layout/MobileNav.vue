@@ -6,7 +6,7 @@ const navItems = [
   { name: 'Experiencia', icon: 'lucide:briefcase', href: '#experiencia' },
   { name: 'Workflow IA', icon: 'lucide:cpu', href: '#ai-workflow' },
   { name: 'Proyectos', icon: 'lucide:layers', href: '#proyectos' },
-  { name: 'Contacto', icon: 'lucide:mail', href: '#contacto' }
+  // { name: 'Contacto', icon: 'lucide:mail', href: '#contacto' }
 ]
 
 const activeSection = ref('#')
