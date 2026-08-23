@@ -4,6 +4,7 @@ import { useScrollReveal } from './composable/useScrollReveal';
 useScrollReveal()
 
 useHead({
+  
   htmlAttrs: { class: 'dark' },
   bodyAttrs: { class: 'bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300' },
   script: [
